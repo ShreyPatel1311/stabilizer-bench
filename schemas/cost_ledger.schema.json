@@ -1,0 +1,343 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:iris-qec:schema:cost_ledger:0.1.0-draft",
+  "title": "Cost ledger",
+  "description": "Per-run ledger of every billable or measurable resource. One entry per model call, plus compute entries per task. Missing measurements are recorded as unavailable, never zero. DRAFT (Week 1): not yet exercised against real runs.",
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,127}$"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sourceRef": {
+      "description": "Pointer to the evidence for a recorded fact. Every recorded fact must carry one.",
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "File path relative to the repository root."
+        },
+        "url": {
+          "type": "string"
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "locator": {
+          "type": "string",
+          "description": "Line range, JSON pointer, table/figure id, or record key within the source."
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "path"
+          ]
+        },
+        {
+          "required": [
+            "url"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "knowable": {
+      "description": "A value that may be unknown. Unknown/unavailable values are never silently omitted or guessed.",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "known"
+            },
+            "value": {},
+            "source": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/sourceRef"
+              },
+              "minItems": 1
+            },
+            "derived": {
+              "type": "boolean",
+              "description": "True if computed from recorded values rather than read directly."
+            }
+          },
+          "required": [
+            "status",
+            "value",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "unknown",
+                "unavailable",
+                "not_applicable"
+              ]
+            },
+            "reason": {
+              "type": "string"
+            },
+            "evidence_needed": {
+              "type": "string",
+              "description": "What artifact/measurement would resolve this field."
+            }
+          },
+          "required": [
+            "status",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "circuitRef": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "const": "stim"
+        },
+        "path": {
+          "type": "string"
+        },
+        "inline_text": {
+          "type": "string"
+        },
+        "normalized_sha256": {
+          "$ref": "#/$defs/sha256",
+          "description": "sha256 of UTF-8 text after the normalization in metric_dictionary (newlines unescaped, whitespace collapsed, comments dropped, trailing newline)."
+        },
+        "source": {
+          "$ref": "#/$defs/sourceRef"
+        }
+      },
+      "required": [
+        "format",
+        "normalized_sha256",
+        "source"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "path"
+          ]
+        },
+        {
+          "required": [
+            "inline_text"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "circuitMetrics": {
+      "type": "object",
+      "properties": {
+        "cx_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "volume": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "one_qubit_gates": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "two_qubit_gates": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "depth": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "seedRef": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "ledger_id",
+    "run_id",
+    "currency",
+    "entries",
+    "totals"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0-draft"
+    },
+    "ledger_id": {
+      "$ref": "#/$defs/id"
+    },
+    "run_id": {
+      "$ref": "#/$defs/id"
+    },
+    "currency": {
+      "const": "USD"
+    },
+    "pricing_snapshot": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/sourceRef"
+        },
+        "captured_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "per_model": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "input_usd_per_mtok": {
+                "type": "number"
+              },
+              "output_usd_per_mtok": {
+                "type": "number"
+              },
+              "cached_input_usd_per_mtok": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "entry_id",
+          "task_id",
+          "category",
+          "timestamp"
+        ],
+        "properties": {
+          "entry_id": {
+            "$ref": "#/$defs/id"
+          },
+          "task_id": {
+            "$ref": "#/$defs/id"
+          },
+          "attempt_id": {
+            "$ref": "#/$defs/id"
+          },
+          "trace_event_id": {
+            "$ref": "#/$defs/id"
+          },
+          "timestamp": {
+            "$ref": "#/$defs/timestamp"
+          },
+          "category": {
+            "enum": [
+              "model_call",
+              "verifier_invocation",
+              "local_compute",
+              "external_service"
+            ]
+          },
+          "model_id": {
+            "type": "string"
+          },
+          "input_tokens": {
+            "$ref": "#/$defs/knowable"
+          },
+          "output_tokens": {
+            "$ref": "#/$defs/knowable"
+          },
+          "reasoning_tokens": {
+            "$ref": "#/$defs/knowable"
+          },
+          "cached_input_tokens": {
+            "$ref": "#/$defs/knowable"
+          },
+          "verifier_invocations": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "wall_clock_seconds": {
+            "$ref": "#/$defs/knowable"
+          },
+          "cpu_seconds": {
+            "$ref": "#/$defs/knowable"
+          },
+          "peak_memory_mb": {
+            "$ref": "#/$defs/knowable"
+          },
+          "gpu_seconds": {
+            "$ref": "#/$defs/knowable"
+          },
+          "cost_usd": {
+            "$ref": "#/$defs/knowable"
+          },
+          "cost_basis": {
+            "enum": [
+              "provider_invoice",
+              "provider_usage_field_x_pricing_snapshot",
+              "estimated",
+              "not_billed_local",
+              "unavailable"
+            ]
+          }
+        }
+      }
+    },
+    "totals": {
+      "type": "object",
+      "properties": {
+        "model_calls": {
+          "type": "integer"
+        },
+        "input_tokens": {
+          "$ref": "#/$defs/knowable"
+        },
+        "output_tokens": {
+          "$ref": "#/$defs/knowable"
+        },
+        "verifier_invocations": {
+          "type": "integer"
+        },
+        "wall_clock_seconds": {
+          "$ref": "#/$defs/knowable"
+        },
+        "cost_usd": {
+          "$ref": "#/$defs/knowable"
+        },
+        "complete": {
+          "type": "boolean",
+          "description": "False if any entry has unavailable cost/tokens."
+        }
+      }
+    }
+  }
+}

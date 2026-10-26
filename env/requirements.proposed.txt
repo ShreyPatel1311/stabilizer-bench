@@ -1,0 +1,10 @@
+# PROPOSED environment lock for IRIS-QEC <-> StabilizerBench work. NOT INSTALLED. No dependency has been changed.
+# Direct pins copied unchanged from third_party/quantum-ai/requirements.txt (commit 93208e3468d2aa217dfe645bead0fb963cd8b279):
+stim==1.15.0
+fastmcp==2.14.5
+python-dotenv==1.2.2
+# Transitive pins: use third_party/quantum-ai/pkgs.txt (upstream full freeze) as the resolution reference.
+# NOTE upstream inconsistency: pkgs.txt pins python-dotenv==1.2.1 while requirements.txt pins 1.2.2. Needs a decision (see reports/missing_info_and_blockers.md B-07).
+# Optional, only for the Copilot harness (requirements-copilot.txt): github-copilot-sdk==0.1.23
+# Week-1 tooling only (schema validation; already installed locally, local version recorded):
+jsonschema==4.26.0

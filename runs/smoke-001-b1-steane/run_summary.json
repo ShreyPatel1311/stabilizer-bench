@@ -1,0 +1,27 @@
+{
+  "run_id": "smoke-001-b1-steane",
+  "outcome": "completed; instance NOT solved",
+  "model_requested": "claude-sonnet-4-5",
+  "model_returned": "claude-sonnet-4-5-20250929",
+  "api_requests": 3,
+  "input_tokens": 7178,
+  "output_tokens": 1232,
+  "wall_clock_seconds": 25.04,
+  "verifier_result": {
+    "preserved": 1,
+    "total": 6,
+    "success_rate": 0.16666666666666666,
+    "circuit": "H 0 1 2 3\nCX 0 4 0 5 0 6 1 4 1 5 1 6 2 4 2 6 3 4 3 5 3 6"
+  },
+  "attempts_used_by_agent": "1 check_stabilizers_tool call (console.log: '!!!!!!' = 0/6 on that call); final submitted circuit scored 1/6 by run.py's own check",
+  "cost_usd_estimate": 0.04,
+  "cost_basis": "ESTIMATE: usage tokens x ASSUMED list price $3/Mtok in, $15/Mtok out (not verified against a price sheet); actual billing: check Anthropic console",
+  "within_cap_usd_1": true,
+  "deviations": [
+    "DEV-1",
+    "DEV-2",
+    "DEV-3",
+    "DEV-4",
+    "DEV-5"
+  ]
+}

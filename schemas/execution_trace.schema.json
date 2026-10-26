@@ -1,0 +1,299 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:iris-qec:schema:execution_trace:0.1.0-draft",
+  "title": "Execution trace",
+  "description": "Append-only event log for one run (JSON Lines: one event per line, each validating against this schema's `event` object). DRAFT (Week 1): not yet exercised against real runs.",
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,127}$"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sourceRef": {
+      "description": "Pointer to the evidence for a recorded fact. Every recorded fact must carry one.",
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "File path relative to the repository root."
+        },
+        "url": {
+          "type": "string"
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "locator": {
+          "type": "string",
+          "description": "Line range, JSON pointer, table/figure id, or record key within the source."
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "path"
+          ]
+        },
+        {
+          "required": [
+            "url"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "knowable": {
+      "description": "A value that may be unknown. Unknown/unavailable values are never silently omitted or guessed.",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "known"
+            },
+            "value": {},
+            "source": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/sourceRef"
+              },
+              "minItems": 1
+            },
+            "derived": {
+              "type": "boolean",
+              "description": "True if computed from recorded values rather than read directly."
+            }
+          },
+          "required": [
+            "status",
+            "value",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "unknown",
+                "unavailable",
+                "not_applicable"
+              ]
+            },
+            "reason": {
+              "type": "string"
+            },
+            "evidence_needed": {
+              "type": "string",
+              "description": "What artifact/measurement would resolve this field."
+            }
+          },
+          "required": [
+            "status",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "circuitRef": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "const": "stim"
+        },
+        "path": {
+          "type": "string"
+        },
+        "inline_text": {
+          "type": "string"
+        },
+        "normalized_sha256": {
+          "$ref": "#/$defs/sha256",
+          "description": "sha256 of UTF-8 text after the normalization in metric_dictionary (newlines unescaped, whitespace collapsed, comments dropped, trailing newline)."
+        },
+        "source": {
+          "$ref": "#/$defs/sourceRef"
+        }
+      },
+      "required": [
+        "format",
+        "normalized_sha256",
+        "source"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "path"
+          ]
+        },
+        {
+          "required": [
+            "inline_text"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "circuitMetrics": {
+      "type": "object",
+      "properties": {
+        "cx_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "volume": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "one_qubit_gates": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "two_qubit_gates": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "depth": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "seedRef": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "event_id",
+    "run_id",
+    "seq",
+    "timestamp",
+    "event_type"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0-draft"
+    },
+    "event_id": {
+      "$ref": "#/$defs/id"
+    },
+    "run_id": {
+      "$ref": "#/$defs/id"
+    },
+    "task_id": {
+      "$ref": "#/$defs/id"
+    },
+    "attempt_id": {
+      "$ref": "#/$defs/id"
+    },
+    "seq": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "timestamp": {
+      "$ref": "#/$defs/timestamp"
+    },
+    "parent_event_id": {
+      "$ref": "#/$defs/id"
+    },
+    "event_type": {
+      "enum": [
+        "run_start",
+        "run_end",
+        "task_start",
+        "task_end",
+        "attempt_start",
+        "attempt_end",
+        "model_call",
+        "tool_call",
+        "verifier_request",
+        "verifier_response",
+        "action",
+        "claim_update",
+        "artifact_created",
+        "timeout",
+        "error"
+      ]
+    },
+    "action_class": {
+      "enum": [
+        "interventional",
+        "epistemic"
+      ]
+    },
+    "component": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object",
+      "properties": {
+        "artifact_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "model_call_id": {
+          "$ref": "#/$defs/id"
+        },
+        "verifier_exchange_id": {
+          "$ref": "#/$defs/id"
+        },
+        "claim": {
+          "type": "object",
+          "properties": {
+            "claim_id": {
+              "$ref": "#/$defs/id"
+            },
+            "scope": {
+              "type": "string"
+            },
+            "status": {
+              "enum": [
+                "active",
+                "qualified",
+                "invalidated"
+              ]
+            },
+            "supporting_evidence": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/id"
+              }
+            },
+            "refuting_evidence": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/id"
+              }
+            }
+          }
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "duration_seconds": {
+      "type": "number",
+      "minimum": 0
+    }
+  }
+}

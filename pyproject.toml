@@ -1,0 +1,15 @@
+[project]
+name = "iris-qec"
+version = "0.1.0"
+description = "IRIS-QEC agent pipeline for StabilizerBench (QEC circuit synthesis)"
+requires-python = ">=3.12"
+dependencies = ["stim==1.15.0"]
+
+[project.optional-dependencies]
+dev = ["pytest", "jsonschema==4.26.0"]
+
+[tool.setuptools]
+packages = ["iris_qec"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

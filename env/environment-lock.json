@@ -1,0 +1,88 @@
+{
+  "schema_note": "Week 1 environment-lock specification. Specification only: nothing was installed, upgraded, or removed.",
+  "captured_at": "2026-10-26",
+  "captured_by": "Claude Code (Week 1 technical lead session), local read-only commands",
+  "benchmark": {
+    "repo_url": "https://github.com/uw-math-ai/quantum-ai",
+    "commit": "93208e3468d2aa217dfe645bead0fb963cd8b279",
+    "commit_date": "2026-09-11T08:51:07-07:00",
+    "commit_subject": "rename script",
+    "tags": "none in repository",
+    "local_path": "third_party/quantum-ai",
+    "working_tree_clean": true,
+    "clone_size": "88M (git clone, full history, 233 commits)"
+  },
+  "host": {
+    "os": "Ubuntu 24.04.5 LTS (Noble Numbat)",
+    "kernel": "Linux 7.0.0-38-generic #38~24.04.4-Ubuntu SMP PREEMPT_DYNAMIC x86_64",
+    "hardware": "HP ZBook Firefly 15 inch G8; 11th Gen Intel Core i7-1165G7 @ 2.80GHz; 8 logical CPUs; 15 GiB RAM",
+    "python": "3.12.3 (/usr/bin/python3, system interpreter; no virtualenv in use)",
+    "git": "2.43.0",
+    "uv": "0.11.16",
+    "pip": "24.0",
+    "pdftotext": "present (/usr/bin/pdftotext)"
+  },
+  "local_packages_relevant": {
+    "stim": "1.15.0",
+    "numpy": "2.2.6",
+    "scipy": "1.17.1",
+    "networkx": "3.5",
+    "PyMatching": "2.3.1",
+    "sinter": "1.15.0",
+    "qiskit": "2.3.0",
+    "python-dotenv": "1.2.1",
+    "jsonschema": "4.26.0",
+    "PyYAML": "6.0.3",
+    "pytest": "8.4.2",
+    "fastmcp": "NOT INSTALLED",
+    "github-copilot-sdk": "NOT INSTALLED"
+  },
+  "full_local_freeze": {
+    "path": "env/local_pip_freeze.txt",
+    "sha256": "c323ad689fab1953193bfe6c24289aa66b84adaaebb2041061188fb34ba33035",
+    "n_packages": 524,
+    "caveat": "Shared system interpreter with 524 unrelated packages; not an isolated environment."
+  },
+  "benchmark_declared_requirements": {
+    "requirements.txt": {
+      "path": "third_party/quantum-ai/requirements.txt",
+      "sha256": "d1ce524cfd168e2889016ca5e297b30fab5825f3926dade32782173ee8bf7f67",
+      "pins": [
+        "stim==1.15.0",
+        "fastmcp==2.14.5",
+        "python-dotenv==1.2.2"
+      ]
+    },
+    "requirements-copilot.txt": {
+      "path": "third_party/quantum-ai/requirements-copilot.txt",
+      "sha256": "a144cc4e8f0c3fd23a84914dc723b910b967532514136b275533bd3532214f1d",
+      "pins": [
+        "github-copilot-sdk==0.1.23"
+      ]
+    },
+    "pkgs.txt": {
+      "path": "third_party/quantum-ai/pkgs.txt",
+      "role": "upstream full freeze (transitive resolution reference)",
+      "python_version_declared": "unknown (not stated in repo)"
+    }
+  },
+  "comparison": {
+    "stim": "local 1.15.0 == declared 1.15.0 (MATCH)",
+    "python-dotenv": "local 1.2.1; requirements.txt declares 1.2.2; pkgs.txt declares 1.2.1 (UPSTREAM INCONSISTENT)",
+    "fastmcp": "declared 2.14.5; not installed locally (needed only by tools/mcp_server.py)",
+    "python": "upstream Python version unknown; local 3.12.3"
+  },
+  "proposed_lock": {
+    "spec": "env/requirements.proposed.txt",
+    "method_pending_approval": null,
+    "interpreter_pin": "Python 3.12.3 (matches current host); upstream interpreter unknown",
+    "secrets_policy": "tools/.env holds API keys per upstream README; keys are never recorded in manifests (names only).",
+    "applied": {
+      "status": "applied 2026-10-26 (user-approved)",
+      "venv": "env/venv (uv venv --python 3.12, not committed)",
+      "lock_file": "env/requirements.lock (uv pip compile third_party/quantum-ai/requirements.txt --generate-hashes; installed with --require-hashes)",
+      "note": "Fresh resolution of transitive deps; differs from upstream pkgs.txt in places (e.g. pydantic 2.14.1 vs 2.12.5). python-dotenv follows requirements.txt (1.2.2)."
+    }
+  },
+  "secrets_checked": "No tools/.env file exists in the clone; no credentials were read or written."
+}

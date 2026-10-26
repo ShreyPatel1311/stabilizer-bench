@@ -1,0 +1,317 @@
+{
+  "record": {
+    "baseline_circuit": "CX 1 0 0 1 1 0\nH 0\nCX 0 3 0 4\nH 1\nCX 1 0 1 4 1 6 4 2 2 4 4 2 5 2 6 2 4 3 3 4 4 3\nH 3\nCX 3 5 3 6 4 5 6 4 6 5 5 6 6 5\n",
+    "baseline_metrics": {
+      "cx_count": 23,
+      "depth": 21,
+      "one_qubit_gates": 3,
+      "two_qubit_gates": 23,
+      "volume": 26
+    },
+    "better": true,
+    "code_name": "Steane",
+    "elapsed_seconds": 68.33,
+    "evaluations": [
+      {
+        "baseline": {
+          "cx_count": 23,
+          "depth": 21,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 23,
+          "volume": 26
+        },
+        "better": false,
+        "candidate": {
+          "cx_count": 23,
+          "depth": 21,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 23,
+          "volume": 26
+        },
+        "circuit": "CX 1 0 0 1 1 0\nH 0\nCX 0 3 0 4\nH 1\nCX 1 0 1 4 1 6 4 2 2 4 4 2 5 2 6 2 4 3 3 4 4 3\nH 3\nCX 3 5 3 6 4 5 6 4 6 5 5 6 6 5",
+        "preserved_stabilizers": 6,
+        "valid": true
+      },
+      {
+        "baseline": {
+          "cx_count": 23,
+          "depth": 21,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 23,
+          "volume": 26
+        },
+        "better": true,
+        "candidate": {
+          "cx_count": 6,
+          "depth": 4,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 6,
+          "volume": 9
+        },
+        "circuit": "H 0\nH 2\nH 3\nCX 0 1 2 4 3 5 3 6 0 4 2 6",
+        "preserved_stabilizers": 0,
+        "valid": false
+      },
+      {
+        "baseline": {
+          "cx_count": 23,
+          "depth": 21,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 23,
+          "volume": 26
+        },
+        "better": true,
+        "candidate": {
+          "cx_count": 7,
+          "depth": 5,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 7,
+          "volume": 10
+        },
+        "circuit": "H 0\nCX 0 1\nH 2\nCX 2 4\nH 3\nCX 3 5\nCX 3 6\nCX 0 4\nCX 0 6\nCX 2 6",
+        "preserved_stabilizers": 0,
+        "valid": false
+      },
+      {
+        "baseline": {
+          "cx_count": 23,
+          "depth": 21,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 23,
+          "volume": 26
+        },
+        "better": true,
+        "candidate": {
+          "cx_count": 7,
+          "depth": 5,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 7,
+          "volume": 10
+        },
+        "circuit": "H 0\nH 2\nH 3\nCX 0 1\nCX 2 4\nCX 3 5\nCX 3 6\nCX 0 4\nCX 0 6\nCX 2 6",
+        "preserved_stabilizers": 0,
+        "valid": false
+      },
+      {
+        "baseline": {
+          "cx_count": 23,
+          "depth": 21,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 23,
+          "volume": 26
+        },
+        "better": true,
+        "candidate": {
+          "cx_count": 0,
+          "depth": 6,
+          "one_qubit_gates": 7,
+          "two_qubit_gates": 7,
+          "volume": 14
+        },
+        "circuit": "H 0\nH 1\nH 2\nH 3\nH 4\nH 5\nH 6\nCZ 0 1\nCZ 0 4\nCZ 0 6\nCZ 2 4\nCZ 2 6\nCZ 3 5\nCZ 3 6",
+        "preserved_stabilizers": 0,
+        "valid": false
+      },
+      {
+        "baseline": {
+          "cx_count": 23,
+          "depth": 21,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 23,
+          "volume": 26
+        },
+        "better": true,
+        "candidate": {
+          "cx_count": 8,
+          "depth": 7,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 8,
+          "volume": 11
+        },
+        "circuit": "H 0\nCX 0 1\nCX 0 4\nCX 0 6\nH 2\nCX 2 4\nCX 2 6\nH 3\nCX 3 5\nCX 3 6\nCX 4 6",
+        "preserved_stabilizers": 0,
+        "valid": false
+      },
+      {
+        "baseline": {
+          "cx_count": 23,
+          "depth": 21,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 23,
+          "volume": 26
+        },
+        "better": true,
+        "candidate": {
+          "cx_count": 22,
+          "depth": 20,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 22,
+          "volume": 25
+        },
+        "circuit": "CX 1 0 0 1 1 0\nH 0\nCX 0 3 0 4\nH 1\nCX 1 0 1 4 1 6 4 2 2 4 4 2 5 2 6 2 4 3 3 4\nH 3\nCX 3 5 3 6 4 5 6 4 6 5 5 6 6 5",
+        "preserved_stabilizers": 4,
+        "valid": false
+      },
+      {
+        "baseline": {
+          "cx_count": 23,
+          "depth": 21,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 23,
+          "volume": 26
+        },
+        "better": true,
+        "candidate": {
+          "cx_count": 21,
+          "depth": 19,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 21,
+          "volume": 24
+        },
+        "circuit": "CX 1 0 0 1 1 0\nH 0\nCX 0 3 0 4\nH 1\nCX 1 0 1 4 1 6 4 2 2 4 4 2 5 2 6 2 4 3 3 4 4 3\nH 3\nCX 3 5 3 6 4 5 6 4 6 5",
+        "preserved_stabilizers": 0,
+        "valid": false
+      },
+      {
+        "baseline": {
+          "cx_count": 23,
+          "depth": 21,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 23,
+          "volume": 26
+        },
+        "better": true,
+        "candidate": {
+          "cx_count": 22,
+          "depth": 20,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 22,
+          "volume": 25
+        },
+        "circuit": "CX 1 0 0 1 1 0\nH 0\nCX 0 3 0 4\nH 1\nCX 1 0 1 4 1 6 4 2 2 4 4 2 5 2 6 2 4 3 4 3\nH 3\nCX 3 5 3 6 4 5 6 4 6 5 5 6 6 5",
+        "preserved_stabilizers": 3,
+        "valid": false
+      },
+      {
+        "baseline": {
+          "cx_count": 23,
+          "depth": 21,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 23,
+          "volume": 26
+        },
+        "better": true,
+        "candidate": {
+          "cx_count": 20,
+          "depth": 18,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 20,
+          "volume": 23
+        },
+        "circuit": "CX 1 0 0 1 1 0\nH 0\nCX 0 3 0 4\nH 1\nCX 1 0 1 4 1 6 5 2 6 2 4 3 3 4 4 3\nH 3\nCX 3 5 3 6 4 5 6 4 6 5 5 6 6 5",
+        "preserved_stabilizers": 2,
+        "valid": false
+      },
+      {
+        "baseline": {
+          "cx_count": 23,
+          "depth": 21,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 23,
+          "volume": 26
+        },
+        "better": true,
+        "candidate": {
+          "cx_count": 20,
+          "depth": 15,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 20,
+          "volume": 23
+        },
+        "circuit": "CX 1 0 0 1 1 0\nH 0\nCX 0 3 0 4\nH 1\nCX 1 0 1 4 1 6 5 4 6 4 2 3 3 2 2 3\nH 3\nCX 3 5 3 6 2 5 6 2 6 5 5 6 6 5",
+        "preserved_stabilizers": 2,
+        "valid": false
+      },
+      {
+        "baseline": {
+          "cx_count": 23,
+          "depth": 21,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 23,
+          "volume": 26
+        },
+        "better": true,
+        "candidate": {
+          "cx_count": 8,
+          "depth": 7,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 8,
+          "volume": 11
+        },
+        "circuit": "H 0\nCX 0 1\nH 2\nCX 2 0\nCX 2 4\nH 3\nCX 3 5\nCX 3 6\nCX 3 4\nCX 0 4\nCX 0 6",
+        "preserved_stabilizers": 1,
+        "valid": false
+      },
+      {
+        "baseline": {
+          "cx_count": 23,
+          "depth": 21,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 23,
+          "volume": 26
+        },
+        "better": true,
+        "candidate": {
+          "cx_count": 8,
+          "depth": 8,
+          "one_qubit_gates": 4,
+          "two_qubit_gates": 8,
+          "volume": 12
+        },
+        "circuit": "H 4\nCX 4 0 4 2 4 3 4 5 4 6\nCX 0 1 2 6 3 5\nH 0\nH 2\nH 3",
+        "preserved_stabilizers": 0,
+        "valid": false
+      },
+      {
+        "baseline": {
+          "cx_count": 23,
+          "depth": 21,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 23,
+          "volume": 26
+        },
+        "better": true,
+        "candidate": {
+          "cx_count": 21,
+          "depth": 19,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 21,
+          "volume": 24
+        },
+        "circuit": "CX 0 1\nH 0\nCX 0 3 0 4\nH 1\nCX 1 0 1 4 1 6 4 2 2 4 4 2 5 2 6 2 4 3 3 4 4 3\nH 3\nCX 3 5 3 6 4 5 6 4 6 5 5 6 6 5",
+        "preserved_stabilizers": 6,
+        "valid": true
+      }
+    ],
+    "finished_at": "2026-03-06T10:04:01.443194",
+    "optimized_circuit": "CX 0 1\nH 0\nCX 0 3 0 4\nH 1\nCX 1 0 1 4 1 6 4 2 2 4 4 2 5 2 6 2 4 3 3 4 4 3\nH 3\nCX 3 5 3 6 4 5 6 4 6 5 5 6 6 5",
+    "optimized_metrics": {
+      "cx_count": 21,
+      "depth": 19,
+      "one_qubit_gates": 3,
+      "two_qubit_gates": 21,
+      "volume": 24
+    },
+    "started_at": "2026-03-06T10:02:53.116986",
+    "valid": true
+  },
+  "run_metadata": {
+    "dataset_path": "../data/circuit_dataset.jsonl",
+    "finished_at": "2026-03-07T22:10:03.583797",
+    "max_attempts": 15,
+    "model": "claude-opus-4.6",
+    "prompt_path": "optimizer_prompt2.txt",
+    "started_at": "2026-03-06T10:01:42.871260",
+    "timeout": 900
+  }
+}

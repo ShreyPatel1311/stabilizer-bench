@@ -1,0 +1,497 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:iris-qec:schema:run_manifest:0.1.0-draft",
+  "title": "Run manifest",
+  "description": "Complete configuration of one run (baseline reproduction, pipeline validation, or comparative evaluation). Written before the run starts; immutable afterwards. DRAFT (Week 1): not yet exercised against real runs.",
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,127}$"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sourceRef": {
+      "description": "Pointer to the evidence for a recorded fact. Every recorded fact must carry one.",
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "File path relative to the repository root."
+        },
+        "url": {
+          "type": "string"
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "locator": {
+          "type": "string",
+          "description": "Line range, JSON pointer, table/figure id, or record key within the source."
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "path"
+          ]
+        },
+        {
+          "required": [
+            "url"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "knowable": {
+      "description": "A value that may be unknown. Unknown/unavailable values are never silently omitted or guessed.",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "known"
+            },
+            "value": {},
+            "source": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/sourceRef"
+              },
+              "minItems": 1
+            },
+            "derived": {
+              "type": "boolean",
+              "description": "True if computed from recorded values rather than read directly."
+            }
+          },
+          "required": [
+            "status",
+            "value",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "unknown",
+                "unavailable",
+                "not_applicable"
+              ]
+            },
+            "reason": {
+              "type": "string"
+            },
+            "evidence_needed": {
+              "type": "string",
+              "description": "What artifact/measurement would resolve this field."
+            }
+          },
+          "required": [
+            "status",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "circuitRef": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "const": "stim"
+        },
+        "path": {
+          "type": "string"
+        },
+        "inline_text": {
+          "type": "string"
+        },
+        "normalized_sha256": {
+          "$ref": "#/$defs/sha256",
+          "description": "sha256 of UTF-8 text after the normalization in metric_dictionary (newlines unescaped, whitespace collapsed, comments dropped, trailing newline)."
+        },
+        "source": {
+          "$ref": "#/$defs/sourceRef"
+        }
+      },
+      "required": [
+        "format",
+        "normalized_sha256",
+        "source"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "path"
+          ]
+        },
+        {
+          "required": [
+            "inline_text"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "circuitMetrics": {
+      "type": "object",
+      "properties": {
+        "cx_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "volume": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "one_qubit_gates": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "two_qubit_gates": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "depth": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "seedRef": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "run_type",
+    "created_at",
+    "approval",
+    "benchmark",
+    "environment",
+    "pipeline",
+    "task_selection",
+    "budget"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0-draft"
+    },
+    "run_id": {
+      "$ref": "#/$defs/id"
+    },
+    "run_type": {
+      "enum": [
+        "fixture_replay_offline",
+        "verifier_only",
+        "baseline_reproduction",
+        "pipeline_validation",
+        "ablation",
+        "comparative_evaluation"
+      ]
+    },
+    "created_at": {
+      "$ref": "#/$defs/timestamp"
+    },
+    "started_at": {
+      "$ref": "#/$defs/timestamp"
+    },
+    "finished_at": {
+      "$ref": "#/$defs/timestamp"
+    },
+    "approval": {
+      "type": "object",
+      "required": [
+        "live_model_calls",
+        "approved_by",
+        "approval_ref"
+      ],
+      "properties": {
+        "live_model_calls": {
+          "type": "boolean"
+        },
+        "approved_by": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "approval_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Pointer to the written approval; null only when live_model_calls is false."
+        },
+        "max_cost_usd": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      }
+    },
+    "benchmark": {
+      "type": "object",
+      "required": [
+        "repo_url",
+        "commit",
+        "dataset_manifest_sha256"
+      ],
+      "properties": {
+        "repo_url": {
+          "type": "string"
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "dataset_manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "verifier_impl": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "sha256": {
+                "$ref": "#/$defs/sha256"
+              }
+            },
+            "required": [
+              "path",
+              "sha256"
+            ]
+          }
+        },
+        "working_tree_clean": {
+          "type": "boolean"
+        }
+      }
+    },
+    "environment": {
+      "type": "object",
+      "required": [
+        "os",
+        "python",
+        "packages",
+        "lock_ref"
+      ],
+      "properties": {
+        "os": {
+          "type": "string"
+        },
+        "kernel": {
+          "type": "string"
+        },
+        "python": {
+          "type": "string"
+        },
+        "hardware": {
+          "type": "string"
+        },
+        "packages": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "lock_ref": {
+          "$ref": "#/$defs/sourceRef"
+        },
+        "env_vars_recorded": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Names only, never values."
+        }
+      }
+    },
+    "pipeline": {
+      "type": "object",
+      "required": [
+        "name",
+        "version"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "code_commit": {
+          "type": "string"
+        },
+        "components": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "enabled": {
+                "type": "boolean"
+              },
+              "version": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "enabled"
+            ]
+          }
+        },
+        "tools_disclosed": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Every tool the agent may use, including classical synthesizers."
+        },
+        "prompts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "sha256": {
+                "$ref": "#/$defs/sha256"
+              }
+            },
+            "required": [
+              "path",
+              "sha256"
+            ]
+          }
+        }
+      }
+    },
+    "model": {
+      "type": "object",
+      "properties": {
+        "provider": {
+          "type": "string"
+        },
+        "model_id": {
+          "type": "string"
+        },
+        "model_snapshot": {
+          "$ref": "#/$defs/knowable"
+        },
+        "harness": {
+          "type": "string"
+        },
+        "inference_settings": {
+          "$ref": "#/$defs/knowable"
+        }
+      }
+    },
+    "task_selection": {
+      "type": "object",
+      "required": [
+        "fixture_ids"
+      ],
+      "properties": {
+        "fixture_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "task_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "split": {
+          "type": "string"
+        },
+        "seed": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      }
+    },
+    "budget": {
+      "type": "object",
+      "required": [
+        "attempt_budget",
+        "timeout_seconds",
+        "stopping_rule"
+      ],
+      "properties": {
+        "attempt_budget": {
+          "type": "integer"
+        },
+        "timeout_seconds": {
+          "type": "integer"
+        },
+        "stopping_rule": {
+          "type": "string"
+        },
+        "max_model_calls": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "max_cost_usd": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "properties": {
+        "results_path": {
+          "type": "string"
+        },
+        "trace_path": {
+          "type": "string"
+        },
+        "cost_ledger_path": {
+          "type": "string"
+        }
+      }
+    },
+    "provenance_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/id"
+      }
+    }
+  }
+}

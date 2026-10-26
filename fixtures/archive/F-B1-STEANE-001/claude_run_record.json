@@ -1,0 +1,27 @@
+{
+  "record": {
+    "circuit": "H 0 1 3\nCX 0 2 1 2 0 4 3 4 1 5 3 5 0 6 1 6 3 6",
+    "code_name": "Steane",
+    "elapsed_seconds": 54.3,
+    "preserved": 6,
+    "stabilizes": {
+      "IIIXXXX": true,
+      "IIIZZZZ": true,
+      "XIXIXIX": true,
+      "XXIIXXI": true,
+      "ZIZIZIZ": true,
+      "ZZIIZZI": true
+    },
+    "success_rate": 1.0,
+    "total": 6
+  },
+  "run_metadata": {
+    "attempts": 1,
+    "benchmarks_path": "..\\data\\benchmarks.json",
+    "finished_at": "2026-02-20T10:03:11.686698",
+    "model": "claude-opus-4.6",
+    "prompt_path": "B1\\prompts\\state_prep_prompt4.txt",
+    "started_at": "2026-02-19T14:16:19.222735",
+    "timeout": 900
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "record": {
+    "circuit": "CX 1 0 0 1 1 0\nH 0\nCX 0 3 0 4\nH 1\nCX 1 0 1 4 1 6 4 2 2 4 4 2 5 2 6 2 4 3 3 4 4 3\nH 3\nCX 3 5 3 6 4 5 6 4 6 5 5 6 6 5",
+    "code_name": "Steane",
+    "elapsed_seconds": 26.56,
+    "preserved": 6,
+    "stabilizes": {
+      "IIIXXXX": true,
+      "IIIZZZZ": true,
+      "XIXIXIX": true,
+      "XXIIXXI": true,
+      "ZIZIZIZ": true,
+      "ZZIIZZI": true
+    },
+    "success_rate": 1.0,
+    "total": 6
+  },
+  "run_metadata": {
+    "attempts": 1,
+    "benchmarks_path": "..\\data\\benchmarks.json",
+    "finished_at": "2026-02-20T10:00:30.043392",
+    "model": "gpt5.2",
+    "prompt_path": "B1\\prompts\\state_prep_prompt4.txt",
+    "started_at": "2026-02-19T14:16:02.120686",
+    "timeout": 900
+  }
+}

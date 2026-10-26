@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Steane",
+    "physical_qubits": 7,
+    "logical_qubits": 1,
+    "d": 3,
+    "generators": [
+      "XXIIXXI",
+      "XIXIXIX",
+      "IIIXXXX",
+      "ZZIIZZI",
+      "ZIZIZIZ",
+      "IIIZZZZ"
+    ]
+  }
+]

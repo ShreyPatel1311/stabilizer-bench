@@ -1,0 +1,516 @@
+{
+  "schema_version": "0.1.0-draft",
+  "fixture_id": "F-B2-STEANE-001",
+  "status": "candidate",
+  "selection_rationale": "Only candidate with a stored per-attempt verifier log (evaluations list) and published-metric baseline/optimized values (G2Q 23->21, depth 21->19) from Claude at 15 att/900s. Held back as primary because the other model (gpt5.2) has no result and B2 requires a larger attempt budget.",
+  "benchmark": {
+    "repo_url": "https://github.com/uw-math-ai/quantum-ai",
+    "commit": "93208e3468d2aa217dfe645bead0fb963cd8b279",
+    "commit_date": "2026-09-11T08:51:07-07:00",
+    "paper": {
+      "id": "arXiv:2604.21287",
+      "version": "v1",
+      "pdf_sha256": "6b7933f0c9b4d4228b35a2db7c43527212dd4335c609aeff950bffd529536f91",
+      "source": {
+        "path": "third_party/paper/paper.txt"
+      }
+    },
+    "dataset_manifest": {
+      "path": "third_party/quantum-ai/data/benchmarks.json",
+      "sha256": "883a1dd504cbd630ce227af777d7a7892b294fdacfb2395c8b2b8fe8f56c7011",
+      "n_instances": 192,
+      "version": {
+        "status": "unknown",
+        "reason": "No dataset version field/tag; file last changed in commit 496d307 (2026-01-29).",
+        "evidence_needed": "Maintainer statement of dataset version; paper-era snapshot identification."
+      },
+      "last_changed_commit": "496d307"
+    },
+    "verifier_impl": [
+      {
+        "role": "stabilizer_oracle",
+        "path": "third_party/quantum-ai/tools/check_stabilizers.py",
+        "sha256": "32a3406df32f6776a16af3b63d0857f416761c70b85cd91a653bc628578d7a20",
+        "version": {
+          "status": "unknown",
+          "reason": "No version string in file; identified by repo commit + sha256.",
+          "evidence_needed": "Upstream release tag or changelog (none found: repo has no tags)."
+        }
+      },
+      {
+        "role": "fault_oracle",
+        "path": "third_party/quantum-ai/tools/check_error_propagation.py",
+        "sha256": "19af2f08a3c9aa655f8a2620555bf4ce4e1b6230732baae4c5f8c7402bbc604b",
+        "version": {
+          "status": "unknown",
+          "reason": "No version string in file; identified by repo commit + sha256.",
+          "evidence_needed": "Upstream release tag or changelog (none found: repo has no tags)."
+        }
+      },
+      {
+        "role": "circuit_metrics",
+        "path": "third_party/quantum-ai/tools/circuit_metric.py",
+        "sha256": "35f28ac8e5ab22ecd42c576848624428748d4317046e613433c2c038e04447f8",
+        "version": {
+          "status": "unknown",
+          "reason": "No version string in file; identified by repo commit + sha256.",
+          "evidence_needed": "Upstream release tag or changelog (none found: repo has no tags)."
+        }
+      },
+      {
+        "role": "scoring_aggregation",
+        "path": "third_party/quantum-ai/analysis/generate_combined_tables.py",
+        "sha256": "33a839d5951814dd6cd6b7862f4bc8722c62de7eae09e55bc5e7464aca2ee45d",
+        "version": {
+          "status": "unknown",
+          "reason": "No version string in file; identified by repo commit + sha256.",
+          "evidence_needed": "Upstream release tag or changelog (none found: repo has no tags)."
+        }
+      },
+      {
+        "role": "harness",
+        "path": "third_party/quantum-ai/tools/agent.py",
+        "sha256": "85466d01a642ed2a22151726a2b8c569d8818bb23a42e81272b91626524737e4",
+        "version": {
+          "status": "unknown",
+          "reason": "No version string in file; identified by repo commit + sha256.",
+          "evidence_needed": "Upstream release tag or changelog (none found: repo has no tags)."
+        }
+      },
+      {
+        "role": "harness",
+        "path": "third_party/quantum-ai/tools/mcp_server.py",
+        "sha256": "0b096d668dea280a425529308beecc2c56ae65c76228f5f7591116f3a2247a70",
+        "version": {
+          "status": "unknown",
+          "reason": "No version string in file; identified by repo commit + sha256.",
+          "evidence_needed": "Upstream release tag or changelog (none found: repo has no tags)."
+        }
+      },
+      {
+        "role": "harness",
+        "path": "third_party/quantum-ai/B1/run.py",
+        "sha256": "57cb1f3ec18a9cbbf7d0120c1e29f60e5daa36575e2d03d6b44253917800b0b8",
+        "version": {
+          "status": "unknown",
+          "reason": "No version string in file; identified by repo commit + sha256.",
+          "evidence_needed": "Upstream release tag or changelog (none found: repo has no tags)."
+        }
+      },
+      {
+        "role": "harness",
+        "path": "third_party/quantum-ai/B2/run.py",
+        "sha256": "7c7e84371088110908193d7a0967ad7a43390197d990aa5bc37f108118ad9caf",
+        "version": {
+          "status": "unknown",
+          "reason": "No version string in file; identified by repo commit + sha256.",
+          "evidence_needed": "Upstream release tag or changelog (none found: repo has no tags)."
+        }
+      }
+    ]
+  },
+  "task": {
+    "task_id": "StabilizerBench.B2.Steane",
+    "benchmark_category": "B2_circuit_optimization",
+    "code_name": "Steane",
+    "code_family": {
+      "status": "unknown",
+      "reason": "benchmarks.json has no code_family field.",
+      "evidence_needed": "Maintainer family mapping."
+    },
+    "n_physical": 7,
+    "k_logical": 1,
+    "distance": 3,
+    "stabilizer_generators": [
+      "XXIIXXI",
+      "XIXIXIX",
+      "IIIXXXX",
+      "ZZIIZZI",
+      "ZIZIZIZ",
+      "IIIZZZZ"
+    ],
+    "generator_count": 6,
+    "original_input": {
+      "baseline_circuit": {
+        "format": "stim",
+        "path": "fixtures/archive/F-B2-STEANE-001/input_baseline_circuit.stim",
+        "normalized_sha256": "93aecb1492eea397371ac6d236c3d574e4db68648597522069d3523baeaca946",
+        "source": {
+          "path": "third_party/quantum-ai/data/circuit_dataset.jsonl",
+          "locator": "line 2 .output_circuit"
+        }
+      },
+      "dataset_record": {
+        "path": "third_party/quantum-ai/data/circuit_dataset.jsonl",
+        "locator": "line 2"
+      },
+      "notes": "Baseline circuit is identical (normalized) to the gpt5.2 B1 'Steane' output circuit in B1/data/gpt5.2/260219.1416.json; how circuit_dataset.jsonl was generated is documented only by data/generate_circuits.py (not reviewed in depth)."
+    },
+    "required_output": "Equivalent Stim circuit preserving all generators with lexicographically smaller (two-qubit gate count, depth).",
+    "success_criterion": "valid AND strictly better under (G2Q, D) lexicographic order (paper III-D2)."
+  },
+  "baseline_records": [
+    {
+      "record_id": "F-B2-STEANE-001.claude.15att900s",
+      "agent_label": "claude-opus-4.6",
+      "run_file": {
+        "path": "third_party/quantum-ai/B2/data/claude-opus-4.6/260306.1001.json",
+        "sha256": "b6685c8b39fcccf4e4d23a656c3ba8346355c5388e82817adca7f257c904610f",
+        "run_started_at": "2026-03-06T10:01:42.871260",
+        "run_finished_at": "2026-03-07T22:10:03.583797"
+      },
+      "published_config_label": "15 att / 900s",
+      "output_circuit": {
+        "format": "stim",
+        "path": "fixtures/archive/F-B2-STEANE-001/claude_optimized_circuit.stim",
+        "normalized_sha256": "7316227e707d32194875bce43f308bc802be709fe8d4496213f3f2fb39184806",
+        "source": {
+          "path": "third_party/quantum-ai/B2/data/claude-opus-4.6/260306.1001.json",
+          "locator": "results[1] (code_name=='Steane').optimized_circuit"
+        }
+      },
+      "verifier_result": {
+        "valid": true,
+        "improved": true,
+        "metrics_baseline": {
+          "cx_count": 23,
+          "volume": 26,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 23,
+          "depth": 21
+        },
+        "verifier_calls_logged": {
+          "status": "known",
+          "value": 14,
+          "source": [
+            {
+              "path": "third_party/quantum-ai/B2/data/claude-opus-4.6/260306.1001.json",
+              "locator": "results[1] (code_name=='Steane').evaluations (length)"
+            }
+          ],
+          "derived": true
+        },
+        "elapsed_seconds": {
+          "status": "known",
+          "value": 68.33,
+          "source": [
+            {
+              "path": "third_party/quantum-ai/B2/data/claude-opus-4.6/260306.1001.json",
+              "locator": "results[1] (code_name=='Steane').elapsed_seconds"
+            }
+          ]
+        },
+        "source": {
+          "path": "third_party/quantum-ai/B2/data/claude-opus-4.6/260306.1001.json",
+          "locator": "results[1] (code_name=='Steane')"
+        },
+        "metrics_output": {
+          "cx_count": 21,
+          "volume": 24,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 21,
+          "depth": 19
+        },
+        "quality_factor": {
+          "status": "known",
+          "value": 0.08902691511387163,
+          "source": [
+            {
+              "path": "third_party/paper/paper.txt",
+              "locator": "III-D2 q_i formula"
+            },
+            {
+              "path": "third_party/quantum-ai/B2/data/claude-opus-4.6/260306.1001.json",
+              "locator": "results[1] (code_name=='Steane').baseline_metrics/optimized_metrics"
+            }
+          ],
+          "derived": true
+        }
+      },
+      "published_evidence": [
+        {
+          "claim": "Aggregate B2 Scap=9,186, Squal=2,911 for claude-opus-4.6 at 15 att/900s (Table III); per-instance outcome not published.",
+          "source": {
+            "path": "third_party/paper/paper.txt",
+            "locator": "Table III, lines 513-524"
+          },
+          "rederived_from_stored_data": true
+        }
+      ],
+      "model": {
+        "status": "known",
+        "value": "claude-opus-4.6",
+        "source": [
+          {
+            "path": "third_party/quantum-ai/B2/data/claude-opus-4.6/260306.1001.json",
+            "locator": "metadata.model"
+          }
+        ]
+      },
+      "harness": {
+        "status": "unknown",
+        "reason": "Not in run metadata.",
+        "evidence_needed": "Per-run harness record."
+      },
+      "inference_settings": {
+        "status": "unknown",
+        "reason": "Not recorded.",
+        "evidence_needed": "Copilot session configuration."
+      },
+      "attempt_budget": {
+        "status": "known",
+        "value": 15,
+        "source": [
+          {
+            "path": "third_party/quantum-ai/B2/data/claude-opus-4.6/260306.1001.json",
+            "locator": "metadata.max_attempts"
+          }
+        ]
+      },
+      "timeout_policy": {
+        "status": "known",
+        "value": "900 s wall-clock limit per code instance",
+        "source": [
+          {
+            "path": "third_party/quantum-ai/B2/data/claude-opus-4.6/260306.1001.json",
+            "locator": "metadata.timeout"
+          }
+        ]
+      },
+      "stopping_rule": {
+        "status": "known",
+        "value": "Up to max_attempts evaluate_optimization calls; best valid strictly-improving candidate retained.",
+        "source": [
+          {
+            "path": "third_party/quantum-ai/B2/prompts/default_prompt.txt"
+          },
+          {
+            "path": "third_party/paper/paper.txt",
+            "locator": "III-D2 agent interface"
+          }
+        ]
+      },
+      "prompt": {
+        "path": "third_party/quantum-ai/B2/prompts/default_prompt.txt",
+        "sha256": "65ebdf45a27c34927a5ac37b88a91989dbcabd21f2c3914c986ab25dd816412a",
+        "status": "recovered_from_history",
+        "recovered_from_commit": "6a9184b (name at run time: B2/optimizer_prompt2.txt (metadata.prompt_path 'optimizer_prompt2.txt'); renamed with 0 content change in 6f715df)"
+      },
+      "token_usage": {
+        "status": "unavailable",
+        "reason": "Not recorded.",
+        "evidence_needed": "Provider usage logs."
+      },
+      "monetary_cost_usd": {
+        "status": "unavailable",
+        "reason": "Not recorded.",
+        "evidence_needed": "Billing records."
+      },
+      "evidence": [
+        {
+          "path": "third_party/quantum-ai/B2/data/claude-opus-4.6/260306.1001.json",
+          "locator": "results[1] (code_name=='Steane')"
+        },
+        {
+          "path": "fixtures/archive/F-B2-STEANE-001/claude_run_record.json"
+        }
+      ]
+    },
+    {
+      "record_id": "F-B2-STEANE-001.gpt.15att900s",
+      "agent_label": "gpt5.2",
+      "run_file": {
+        "path": "third_party/quantum-ai/B2/data/gpt5.2/260306.1001.json",
+        "sha256": "6d20777a17814f15fc066c81e540e47dd597be37c5d8ced23ea43db0052d38e9",
+        "run_started_at": "2026-03-06T10:01:34.632254",
+        "run_finished_at": "2026-03-07T21:40:41.550863"
+      },
+      "published_config_label": "15 att / 900s",
+      "output_circuit": null,
+      "verifier_result": {
+        "valid": false,
+        "improved": false,
+        "metrics_baseline": {
+          "cx_count": 23,
+          "volume": 26,
+          "one_qubit_gates": 3,
+          "two_qubit_gates": 23,
+          "depth": 21
+        },
+        "verifier_calls_logged": {
+          "status": "known",
+          "value": 17,
+          "source": [
+            {
+              "path": "third_party/quantum-ai/B2/data/gpt5.2/260306.1001.json",
+              "locator": "results[1] (code_name=='Steane').evaluations (length)"
+            }
+          ],
+          "derived": true
+        },
+        "elapsed_seconds": {
+          "status": "known",
+          "value": 81.1,
+          "source": [
+            {
+              "path": "third_party/quantum-ai/B2/data/gpt5.2/260306.1001.json",
+              "locator": "results[1] (code_name=='Steane').elapsed_seconds"
+            }
+          ]
+        },
+        "source": {
+          "path": "third_party/quantum-ai/B2/data/gpt5.2/260306.1001.json",
+          "locator": "results[1] (code_name=='Steane')"
+        },
+        "quality_factor": {
+          "status": "unavailable",
+          "reason": "No valid optimized circuit stored (status=no_result).",
+          "evidence_needed": "n/a: record is a failed attempt."
+        }
+      },
+      "published_evidence": [
+        {
+          "claim": "Aggregate B2 Scap=8,994, Squal=2,757 for gpt5.2 at 15 att/900s (Table III); per-instance outcome not published.",
+          "source": {
+            "path": "third_party/paper/paper.txt",
+            "locator": "Table III, lines 513-524"
+          },
+          "rederived_from_stored_data": true
+        }
+      ],
+      "model": {
+        "status": "known",
+        "value": "gpt5.2",
+        "source": [
+          {
+            "path": "third_party/quantum-ai/B2/data/gpt5.2/260306.1001.json",
+            "locator": "metadata.model"
+          }
+        ]
+      },
+      "harness": {
+        "status": "unknown",
+        "reason": "Not in run metadata.",
+        "evidence_needed": "Per-run harness record."
+      },
+      "inference_settings": {
+        "status": "unknown",
+        "reason": "Not recorded.",
+        "evidence_needed": "Copilot session configuration."
+      },
+      "attempt_budget": {
+        "status": "known",
+        "value": 15,
+        "source": [
+          {
+            "path": "third_party/quantum-ai/B2/data/gpt5.2/260306.1001.json",
+            "locator": "metadata.max_attempts"
+          }
+        ]
+      },
+      "timeout_policy": {
+        "status": "known",
+        "value": "900 s wall-clock limit per code instance",
+        "source": [
+          {
+            "path": "third_party/quantum-ai/B2/data/gpt5.2/260306.1001.json",
+            "locator": "metadata.timeout"
+          }
+        ]
+      },
+      "stopping_rule": {
+        "status": "known",
+        "value": "Up to max_attempts evaluate_optimization calls; best valid strictly-improving candidate retained.",
+        "source": [
+          {
+            "path": "third_party/quantum-ai/B2/prompts/default_prompt.txt"
+          },
+          {
+            "path": "third_party/paper/paper.txt",
+            "locator": "III-D2 agent interface"
+          }
+        ]
+      },
+      "prompt": {
+        "path": "third_party/quantum-ai/B2/prompts/default_prompt.txt",
+        "sha256": "65ebdf45a27c34927a5ac37b88a91989dbcabd21f2c3914c986ab25dd816412a",
+        "status": "recovered_from_history",
+        "recovered_from_commit": "6a9184b (name at run time: B2/optimizer_prompt2.txt (metadata.prompt_path 'optimizer_prompt2.txt'); renamed with 0 content change in 6f715df)"
+      },
+      "token_usage": {
+        "status": "unavailable",
+        "reason": "Not recorded.",
+        "evidence_needed": "Provider usage logs."
+      },
+      "monetary_cost_usd": {
+        "status": "unavailable",
+        "reason": "Not recorded.",
+        "evidence_needed": "Billing records."
+      },
+      "evidence": [
+        {
+          "path": "third_party/quantum-ai/B2/data/gpt5.2/260306.1001.json",
+          "locator": "results[1] (code_name=='Steane')"
+        },
+        {
+          "path": "fixtures/archive/F-B2-STEANE-001/gpt_run_record.json"
+        }
+      ]
+    }
+  ],
+  "scoring": {
+    "formula_refs": [
+      {
+        "path": "third_party/paper/paper.txt",
+        "locator": "Eq. 1-2, III-D2"
+      }
+    ]
+  },
+  "provenance_ids": [
+    "prov.repo.quantum-ai",
+    "prov.paper.2604.21287v1",
+    "prov.prompt.B2.default"
+  ],
+  "unknown_fields": [
+    {
+      "field": "baseline_records[*].inference_settings",
+      "status": "unknown",
+      "evidence_needed": "Harness configuration used for the Feb-Mar 2026 runs (Copilot SDK session settings) from the authors."
+    },
+    {
+      "field": "baseline_records[*].harness",
+      "status": "unknown",
+      "evidence_needed": "Per-run harness record or author confirmation."
+    },
+    {
+      "field": "baseline_records[*].model (exact snapshot)",
+      "status": "unknown",
+      "evidence_needed": "Provider model id/snapshot string from Copilot session logs."
+    },
+    {
+      "field": "baseline_records[*].token_usage",
+      "status": "unavailable",
+      "evidence_needed": "Provider/Copilot usage logs for the original runs (probably not obtainable)."
+    },
+    {
+      "field": "baseline_records[*].monetary_cost_usd",
+      "status": "unavailable",
+      "evidence_needed": "Authors' billing records; not obtainable from repo."
+    },
+    {
+      "field": "benchmark.dataset_manifest.version",
+      "status": "unknown",
+      "evidence_needed": "Maintainer-declared dataset version."
+    },
+    {
+      "field": "baseline_records[*].verifier_result.verifier_calls_logged",
+      "status": "unknown",
+      "evidence_needed": "Raw harness transcript for the run, or B2 records (which list evaluations)."
+    },
+    {
+      "field": "baseline_records[gpt].output_circuit",
+      "status": "unavailable",
+      "evidence_needed": "gpt5.2 produced no valid optimized circuit for this task (status=no_result): no baseline output exists."
+    }
+  ]
+}

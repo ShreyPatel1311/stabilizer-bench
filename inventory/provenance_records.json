@@ -1,0 +1,227 @@
+[
+  {
+    "schema_version": "0.1.0-draft",
+    "provenance_id": "prov.repo.benchmarks_json",
+    "subject": {
+      "path": "third_party/quantum-ai/data/benchmarks.json",
+      "sha256": "883a1dd504cbd630ce227af777d7a7892b294fdacfb2395c8b2b8fe8f56c7011",
+      "size_bytes": 2255773,
+      "description": "192-code task manifest (name, n, k, d, generators)"
+    },
+    "origin": {
+      "url": "https://github.com/uw-math-ai/quantum-ai",
+      "commit": "93208e3468d2aa217dfe645bead0fb963cd8b279",
+      "path_in_origin": "data/benchmarks.json",
+      "retrieved_at": "2026-10-26T06:14:00Z",
+      "retrieval_method": "git clone (user-approved, read-only)",
+      "kind": "git_repository"
+    },
+    "recorded_at": "2026-10-26T06:20:00Z",
+    "recorded_by": "Claude Code Week 1 session"
+  },
+  {
+    "schema_version": "0.1.0-draft",
+    "provenance_id": "prov.repo.circuit_dataset",
+    "subject": {
+      "path": "third_party/quantum-ai/data/circuit_dataset.jsonl",
+      "sha256": "240ee35008f0801ccf2e040e294625234ab19d074fb194d7d9f782827bc7ee52",
+      "size_bytes": 3002210,
+      "description": "192-line B2/B3 baseline circuit dataset"
+    },
+    "origin": {
+      "url": "https://github.com/uw-math-ai/quantum-ai",
+      "commit": "93208e3468d2aa217dfe645bead0fb963cd8b279",
+      "path_in_origin": "data/circuit_dataset.jsonl",
+      "retrieved_at": "2026-10-26T06:14:00Z",
+      "retrieval_method": "git clone",
+      "kind": "git_repository"
+    },
+    "recorded_at": "2026-10-26T06:20:00Z",
+    "recorded_by": "Claude Code Week 1 session"
+  },
+  {
+    "schema_version": "0.1.0-draft",
+    "provenance_id": "prov.paper.2604.21287v1",
+    "subject": {
+      "path": "third_party/paper/stabilizerbench_2604.21287v1.pdf",
+      "sha256": "6b7933f0c9b4d4228b35a2db7c43527212dd4335c609aeff950bffd529536f91",
+      "size_bytes": 736917,
+      "description": "StabilizerBench paper v1 (23 Apr 2026)"
+    },
+    "origin": {
+      "url": "https://arxiv.org/pdf/2604.21287v1",
+      "retrieved_at": "2026-10-26T06:14:00Z",
+      "retrieval_method": "curl (user-approved)",
+      "kind": "arxiv_paper"
+    },
+    "recorded_at": "2026-10-26T06:20:00Z",
+    "recorded_by": "Claude Code Week 1 session"
+  },
+  {
+    "schema_version": "0.1.0-draft",
+    "provenance_id": "prov.paper.text",
+    "subject": {
+      "path": "third_party/paper/paper.txt",
+      "sha256": "e53ef83194bc069ec11b6f9f17ff3ca49f00ab052168ef599dc5f4b42dae846e",
+      "size_bytes": 77956,
+      "description": "pdftotext -layout extraction of the paper PDF (line numbers in evidence refs refer to this file)"
+    },
+    "origin": {
+      "url": "local",
+      "retrieved_at": "2026-10-26T06:20:00Z",
+      "retrieval_method": "pdftotext -layout",
+      "kind": "local_authored"
+    },
+    "recorded_at": "2026-10-26T06:20:00Z",
+    "recorded_by": "Claude Code Week 1 session"
+  },
+  {
+    "schema_version": "0.1.0-draft",
+    "provenance_id": "prov.prompt.B1.default",
+    "subject": {
+      "path": "third_party/quantum-ai/B1/prompts/default_prompt.txt",
+      "sha256": "d631e81be8870a4858c67e1ed5b5213974a82be7b4f34c585aebaa89711bed4d",
+      "size_bytes": 2561,
+      "description": "Run metadata names B1/prompts/state_prep_prompt4.txt; that file was renamed to default_prompt.txt with zero content change in 6f715df. Verified: sha256 of `git show 6a9184b:B1/prompts/state_prep_prompt4.txt` == current default_prompt.txt (d631e81b...)."
+    },
+    "origin": {
+      "url": "https://github.com/uw-math-ai/quantum-ai",
+      "commit": "6a9184babd0a130a33d1a547b995caffc5389567",
+      "path_in_origin": "B1/prompts/state_prep_prompt4.txt",
+      "retrieval_method": "git show",
+      "kind": "recovered_from_git_history"
+    },
+    "recorded_at": "2026-10-26T06:20:00Z",
+    "recorded_by": "Claude Code Week 1 session"
+  },
+  {
+    "schema_version": "0.1.0-draft",
+    "provenance_id": "prov.prompt.B2.default",
+    "subject": {
+      "path": "third_party/quantum-ai/B2/prompts/default_prompt.txt",
+      "sha256": "65ebdf45a27c34927a5ac37b88a91989dbcabd21f2c3914c986ab25dd816412a",
+      "size_bytes": 4599,
+      "description": "Run metadata names optimizer_prompt2.txt; renamed to B2/prompts/default_prompt.txt with zero content change in 6f715df. Verified by sha256 of `git show 6a9184b:B2/optimizer_prompt2.txt` (65ebdf45...)."
+    },
+    "origin": {
+      "url": "https://github.com/uw-math-ai/quantum-ai",
+      "commit": "6a9184babd0a130a33d1a547b995caffc5389567",
+      "path_in_origin": "B2/optimizer_prompt2.txt",
+      "retrieval_method": "git show",
+      "kind": "recovered_from_git_history"
+    },
+    "recorded_at": "2026-10-26T06:20:00Z",
+    "recorded_by": "Claude Code Week 1 session"
+  },
+  {
+    "schema_version": "0.1.0-draft",
+    "provenance_id": "prov.prompt.B1.recovered_copy",
+    "subject": {
+      "path": "third_party/recovered/B1_state_prep_prompt4.txt",
+      "sha256": "d631e81be8870a4858c67e1ed5b5213974a82be7b4f34c585aebaa89711bed4d",
+      "size_bytes": 2561,
+      "description": "Byte copy of historic state_prep_prompt4.txt for archival."
+    },
+    "origin": {
+      "url": "https://github.com/uw-math-ai/quantum-ai",
+      "commit": "6a9184babd0a130a33d1a547b995caffc5389567",
+      "path_in_origin": "B1/prompts/state_prep_prompt4.txt",
+      "retrieval_method": "git show",
+      "kind": "recovered_from_git_history"
+    },
+    "recorded_at": "2026-10-26T06:20:00Z",
+    "recorded_by": "Claude Code Week 1 session"
+  },
+  {
+    "schema_version": "0.1.0-draft",
+    "provenance_id": "prov.runfile.B1.claude.1att900",
+    "subject": {
+      "path": "third_party/quantum-ai/B1/data/claude-opus-4.6/260219.1416.json",
+      "sha256": "7316c04fdb29d0903dd3f47ccb0e34a389979130bdd5a523d3e6a0c1af8157b9",
+      "size_bytes": 2013440,
+      "description": "B1 Claude Opus 4.6 1 att/900s run (192 results). Added to the repo in commit 6a9184b (2026-05-14), AFTER paper v1 (2026-04-23); run dates are Feb-Mar 2026."
+    },
+    "origin": {
+      "url": "https://github.com/uw-math-ai/quantum-ai",
+      "commit": "93208e3468d2aa217dfe645bead0fb963cd8b279",
+      "path_in_origin": "B1/data/claude-opus-4.6/260219.1416.json",
+      "retrieval_method": "git clone",
+      "kind": "git_repository"
+    },
+    "recorded_at": "2026-10-26T06:20:00Z",
+    "recorded_by": "Claude Code Week 1 session"
+  },
+  {
+    "schema_version": "0.1.0-draft",
+    "provenance_id": "prov.runfile.B1.gpt.1att900",
+    "subject": {
+      "path": "third_party/quantum-ai/B1/data/gpt5.2/260219.1416.json",
+      "sha256": "acc339ef935cba4ed6d43daf5c720f2077a3e52c69cb667aa13861c6aa392de1",
+      "size_bytes": 1942654,
+      "description": "B1 GPT-5.2 1 att/900s run. Added to the repo in commit 6a9184b (2026-05-14), AFTER paper v1 (2026-04-23); run dates are Feb-Mar 2026."
+    },
+    "origin": {
+      "url": "https://github.com/uw-math-ai/quantum-ai",
+      "commit": "93208e3468d2aa217dfe645bead0fb963cd8b279",
+      "path_in_origin": "B1/data/gpt5.2/260219.1416.json",
+      "retrieval_method": "git clone",
+      "kind": "git_repository"
+    },
+    "recorded_at": "2026-10-26T06:20:00Z",
+    "recorded_by": "Claude Code Week 1 session"
+  },
+  {
+    "schema_version": "0.1.0-draft",
+    "provenance_id": "prov.runfile.B2.claude.15att900",
+    "subject": {
+      "path": "third_party/quantum-ai/B2/data/claude-opus-4.6/260306.1001.json",
+      "sha256": "b6685c8b39fcccf4e4d23a656c3ba8346355c5388e82817adca7f257c904610f",
+      "size_bytes": 2475969,
+      "description": "B2 Claude 15 att/900s run. Added to the repo in commit 6a9184b (2026-05-14), AFTER paper v1 (2026-04-23); run dates are Feb-Mar 2026."
+    },
+    "origin": {
+      "url": "https://github.com/uw-math-ai/quantum-ai",
+      "commit": "93208e3468d2aa217dfe645bead0fb963cd8b279",
+      "path_in_origin": "B2/data/claude-opus-4.6/260306.1001.json",
+      "retrieval_method": "git clone",
+      "kind": "git_repository"
+    },
+    "recorded_at": "2026-10-26T06:20:00Z",
+    "recorded_by": "Claude Code Week 1 session"
+  },
+  {
+    "schema_version": "0.1.0-draft",
+    "provenance_id": "prov.runfile.B2.gpt.15att900",
+    "subject": {
+      "path": "third_party/quantum-ai/B2/data/gpt5.2/260306.1001.json",
+      "sha256": "6d20777a17814f15fc066c81e540e47dd597be37c5d8ced23ea43db0052d38e9",
+      "size_bytes": 2536213,
+      "description": "B2 GPT-5.2 15 att/900s run. Added to the repo in commit 6a9184b (2026-05-14), AFTER paper v1 (2026-04-23); run dates are Feb-Mar 2026."
+    },
+    "origin": {
+      "url": "https://github.com/uw-math-ai/quantum-ai",
+      "commit": "93208e3468d2aa217dfe645bead0fb963cd8b279",
+      "path_in_origin": "B2/data/gpt5.2/260306.1001.json",
+      "retrieval_method": "git clone",
+      "kind": "git_repository"
+    },
+    "recorded_at": "2026-10-26T06:20:00Z",
+    "recorded_by": "Claude Code Week 1 session"
+  },
+  {
+    "schema_version": "0.1.0-draft",
+    "provenance_id": "prov.local.pipfreeze",
+    "subject": {
+      "path": "env/local_pip_freeze.txt",
+      "sha256": "c323ad689fab1953193bfe6c24289aa66b84adaaebb2041061188fb34ba33035",
+      "size_bytes": 9740,
+      "description": "pip list --format=freeze of /usr/bin/python3"
+    },
+    "origin": {
+      "retrieved_at": "2026-10-26T06:20:00Z",
+      "kind": "local_system_capture"
+    },
+    "recorded_at": "2026-10-26T06:20:00Z",
+    "recorded_by": "Claude Code Week 1 session"
+  }
+]

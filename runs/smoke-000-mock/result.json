@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "benchmarks_path": "../../inputs/steane_only.benchmarks.json",
+    "model": "mock-model",
+    "harness": "anthropic",
+    "prompt_path": "/home/godseye/Public/Assignments/607/week1/runs/smoke-000-mock/repo/B1/prompts/default_prompt.txt",
+    "attempts": 1,
+    "timeout": 900,
+    "started_at": "2026-10-26T02:33:58.472213",
+    "finished_at": "2026-10-26T02:33:58.482204"
+  },
+  "results": [
+    {
+      "code_name": "Steane",
+      "circuit": "H 0 1 3\nCX 0 2 1 2 0 4 3 4 1 5 3 5 0 6 1 6 3 6",
+      "stabilizes": {
+        "XXIIXXI": true,
+        "XIXIXIX": true,
+        "IIIXXXX": true,
+        "ZZIIZZI": true,
+        "ZIZIZIZ": true,
+        "IIIZZZZ": true
+      },
+      "preserved": 6,
+      "total": 6,
+      "success_rate": 1.0,
+      "elapsed_seconds": 0.01
+    }
+  ]
+}

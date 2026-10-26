@@ -1,0 +1,11 @@
+# secrets
+.env
+**/.env
+# local environment
+env/venv/
+__pycache__/
+# per-run pristine exports of the benchmark (upstream has no license; never redistributed)
+runs/*/repo/
+# fetched by scripts/fetch_external.sh (not redistributed)
+third_party/paper/
+third_party/recovered/

@@ -1,0 +1,117 @@
+{
+  "schema_version": "0.1.0-draft",
+  "run_id": "smoke-001-b1-steane",
+  "run_type": "baseline_reproduction",
+  "created_at": "2026-10-26T12:00:00Z",
+  "approval": {
+    "live_model_calls": true,
+    "approved_by": "user (chat)",
+    "approval_ref": "Chat: 'let's do one smoke test now'; harness option 1 (patched wrapper); 'Anthropic harness'; '$1 cap only'",
+    "max_cost_usd": 1.0
+  },
+  "benchmark": {
+    "repo_url": "https://github.com/uw-math-ai/quantum-ai",
+    "commit": "93208e3468d2aa217dfe645bead0fb963cd8b279",
+    "dataset_manifest_sha256": "883a1dd504cbd630ce227af777d7a7892b294fdacfb2395c8b2b8fe8f56c7011",
+    "verifier_impl": [
+      {
+        "path": "third_party/quantum-ai/tools/check_stabilizers.py",
+        "sha256": "32a3406df32f6776a16af3b63d0857f416761c70b85cd91a653bc628578d7a20"
+      },
+      {
+        "path": "third_party/quantum-ai/tools/agent.py",
+        "sha256": "85466d01a642ed2a22151726a2b8c569d8818bb23a42e81272b91626524737e4"
+      },
+      {
+        "path": "third_party/quantum-ai/B1/run.py",
+        "sha256": "57cb1f3ec18a9cbbf7d0120c1e29f60e5daa36575e2d03d6b44253917800b0b8"
+      }
+    ],
+    "working_tree_clean": true
+  },
+  "environment": {
+    "os": "Ubuntu 24.04.5 LTS",
+    "kernel": "7.0.0-38-generic",
+    "python": "3.12.3 (uv venv week1/env/venv)",
+    "hardware": "i7-1165G7, 8 CPUs, 15 GiB",
+    "packages": {
+      "stim": "1.15.0",
+      "fastmcp": "2.14.5",
+      "python-dotenv": "1.2.2",
+      "pydantic": "2.14.1"
+    },
+    "lock_ref": {
+      "path": "week1/env/requirements.lock",
+      "sha256": "85f58e06771185babafa2871fd7482cce0645185efb650c2af53bde648a687ef"
+    },
+    "env_vars_recorded": [
+      "ANTHROPIC_API_KEY (name only)"
+    ]
+  },
+  "pipeline": {
+    "name": "StabilizerBench stock B1 harness (no IRIS-QEC components)",
+    "version": "93208e3",
+    "components": [
+      {
+        "name": "smoke_launcher spend guard (DEV-1 max_tokens<=8192, DEV-2 <=4 requests + usage ledger)",
+        "enabled": true,
+        "version": "f1539a327b54"
+      }
+    ],
+    "tools_disclosed": [
+      "check_stabilizers_tool",
+      "final_circuit"
+    ],
+    "prompts": [
+      {
+        "path": "third_party/quantum-ai/B1/prompts/default_prompt.txt",
+        "sha256": "d631e81be8870a4858c67e1ed5b5213974a82be7b4f34c585aebaa89711bed4d"
+      }
+    ]
+  },
+  "model": {
+    "provider": "anthropic",
+    "model_id": "claude-sonnet-4-5",
+    "model_snapshot": {
+      "status": "unknown",
+      "reason": "Alias; resolved id will be recorded from API response 'model' field in ledger.jsonl.",
+      "evidence_needed": "returned_model in ledger"
+    },
+    "harness": "anthropic (stock tools/agent.py + launcher)",
+    "inference_settings": {
+      "status": "known",
+      "value": {
+        "temperature": "API default (not set by harness)",
+        "max_tokens": 8192,
+        "thinking": "not enabled"
+      },
+      "source": [
+        {
+          "path": "week1/harness/smoke_launcher.py"
+        }
+      ]
+    }
+  },
+  "task_selection": {
+    "fixture_ids": [
+      "F-B1-STEANE-001"
+    ],
+    "task_ids": [
+      "StabilizerBench.B1.Steane"
+    ],
+    "split": "single instance",
+    "seed": null
+  },
+  "budget": {
+    "attempt_budget": 1,
+    "timeout_seconds": 900,
+    "stopping_rule": "Prompt-level: agent calls final_circuit after all stabilizers preserved or attempts exhausted; hard guard: <=4 API requests, max_tokens<=8192",
+    "max_model_calls": 4,
+    "max_cost_usd": 1.0
+  },
+  "outputs": {
+    "results_path": "week1/runs/smoke-001-b1-steane/result.json",
+    "trace_path": "week1/runs/smoke-001-b1-steane/console.log",
+    "cost_ledger_path": "week1/runs/smoke-001-b1-steane/ledger.jsonl"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "benchmarks_path": "/home/godseye/Public/Assignments/607/week1/runs/inputs/steane_only.benchmarks.json",
+    "model": "claude-sonnet-4-5",
+    "harness": "anthropic",
+    "prompt_path": "/home/godseye/Public/Assignments/607/week1/runs/smoke-001-b1-steane/repo/B1/prompts/default_prompt.txt",
+    "attempts": 1,
+    "timeout": 900,
+    "started_at": "2026-10-26T02:35:21.478293",
+    "finished_at": "2026-10-26T02:35:46.521710"
+  },
+  "results": [
+    {
+      "code_name": "Steane",
+      "circuit": "H 0 1 2 3\nCX 0 4 0 5 0 6 1 4 1 5 1 6 2 4 2 6 3 4 3 5 3 6",
+      "stabilizes": {
+        "XXIIXXI": false,
+        "XIXIXIX": false,
+        "IIIXXXX": true,
+        "ZZIIZZI": false,
+        "ZIZIZIZ": false,
+        "IIIZZZZ": false
+      },
+      "preserved": 1,
+      "total": 6,
+      "success_rate": 0.16666666666666666,
+      "elapsed_seconds": 25.04
+    }
+  ]
+}

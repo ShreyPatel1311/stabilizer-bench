@@ -1,0 +1,486 @@
+{
+  "schema_version": "0.1.0-draft",
+  "fixture_id": "F-B1-PERFECT5-001",
+  "status": "candidate",
+  "selection_rationale": "Discriminating case: gpt5.2 solves (4/4) while claude-opus-4.6 fails (0/4) at identical config; useful later as a negative-control/regression fixture, and the only code GPT-4.1 solved (paper IV-A).",
+  "benchmark": {
+    "repo_url": "https://github.com/uw-math-ai/quantum-ai",
+    "commit": "93208e3468d2aa217dfe645bead0fb963cd8b279",
+    "commit_date": "2026-09-11T08:51:07-07:00",
+    "paper": {
+      "id": "arXiv:2604.21287",
+      "version": "v1",
+      "pdf_sha256": "6b7933f0c9b4d4228b35a2db7c43527212dd4335c609aeff950bffd529536f91",
+      "source": {
+        "path": "third_party/paper/paper.txt"
+      }
+    },
+    "dataset_manifest": {
+      "path": "third_party/quantum-ai/data/benchmarks.json",
+      "sha256": "883a1dd504cbd630ce227af777d7a7892b294fdacfb2395c8b2b8fe8f56c7011",
+      "n_instances": 192,
+      "version": {
+        "status": "unknown",
+        "reason": "No dataset version field/tag; file last changed in commit 496d307 (2026-01-29).",
+        "evidence_needed": "Maintainer statement of dataset version; paper-era snapshot identification."
+      },
+      "last_changed_commit": "496d307"
+    },
+    "verifier_impl": [
+      {
+        "role": "stabilizer_oracle",
+        "path": "third_party/quantum-ai/tools/check_stabilizers.py",
+        "sha256": "32a3406df32f6776a16af3b63d0857f416761c70b85cd91a653bc628578d7a20",
+        "version": {
+          "status": "unknown",
+          "reason": "No version string in file; identified by repo commit + sha256.",
+          "evidence_needed": "Upstream release tag or changelog (none found: repo has no tags)."
+        }
+      },
+      {
+        "role": "fault_oracle",
+        "path": "third_party/quantum-ai/tools/check_error_propagation.py",
+        "sha256": "19af2f08a3c9aa655f8a2620555bf4ce4e1b6230732baae4c5f8c7402bbc604b",
+        "version": {
+          "status": "unknown",
+          "reason": "No version string in file; identified by repo commit + sha256.",
+          "evidence_needed": "Upstream release tag or changelog (none found: repo has no tags)."
+        }
+      },
+      {
+        "role": "circuit_metrics",
+        "path": "third_party/quantum-ai/tools/circuit_metric.py",
+        "sha256": "35f28ac8e5ab22ecd42c576848624428748d4317046e613433c2c038e04447f8",
+        "version": {
+          "status": "unknown",
+          "reason": "No version string in file; identified by repo commit + sha256.",
+          "evidence_needed": "Upstream release tag or changelog (none found: repo has no tags)."
+        }
+      },
+      {
+        "role": "scoring_aggregation",
+        "path": "third_party/quantum-ai/analysis/generate_combined_tables.py",
+        "sha256": "33a839d5951814dd6cd6b7862f4bc8722c62de7eae09e55bc5e7464aca2ee45d",
+        "version": {
+          "status": "unknown",
+          "reason": "No version string in file; identified by repo commit + sha256.",
+          "evidence_needed": "Upstream release tag or changelog (none found: repo has no tags)."
+        }
+      },
+      {
+        "role": "harness",
+        "path": "third_party/quantum-ai/tools/agent.py",
+        "sha256": "85466d01a642ed2a22151726a2b8c569d8818bb23a42e81272b91626524737e4",
+        "version": {
+          "status": "unknown",
+          "reason": "No version string in file; identified by repo commit + sha256.",
+          "evidence_needed": "Upstream release tag or changelog (none found: repo has no tags)."
+        }
+      },
+      {
+        "role": "harness",
+        "path": "third_party/quantum-ai/tools/mcp_server.py",
+        "sha256": "0b096d668dea280a425529308beecc2c56ae65c76228f5f7591116f3a2247a70",
+        "version": {
+          "status": "unknown",
+          "reason": "No version string in file; identified by repo commit + sha256.",
+          "evidence_needed": "Upstream release tag or changelog (none found: repo has no tags)."
+        }
+      },
+      {
+        "role": "harness",
+        "path": "third_party/quantum-ai/B1/run.py",
+        "sha256": "57cb1f3ec18a9cbbf7d0120c1e29f60e5daa36575e2d03d6b44253917800b0b8",
+        "version": {
+          "status": "unknown",
+          "reason": "No version string in file; identified by repo commit + sha256.",
+          "evidence_needed": "Upstream release tag or changelog (none found: repo has no tags)."
+        }
+      },
+      {
+        "role": "harness",
+        "path": "third_party/quantum-ai/B2/run.py",
+        "sha256": "7c7e84371088110908193d7a0967ad7a43390197d990aa5bc37f108118ad9caf",
+        "version": {
+          "status": "unknown",
+          "reason": "No version string in file; identified by repo commit + sha256.",
+          "evidence_needed": "Upstream release tag or changelog (none found: repo has no tags)."
+        }
+      }
+    ]
+  },
+  "task": {
+    "task_id": "StabilizerBench.B1.Perfect_5-Qubit_Code",
+    "benchmark_category": "B1_state_preparation",
+    "code_name": "Perfect 5-Qubit Code",
+    "code_family": {
+      "status": "unknown",
+      "reason": "benchmarks.json has no code_family field (schema file lists it, data lacks it).",
+      "evidence_needed": "Maintainer family mapping; 12 (paper text in midterm README) vs 14 (paper/README) discrepancy to resolve."
+    },
+    "n_physical": 5,
+    "k_logical": 1,
+    "distance": 3,
+    "stabilizer_generators": [
+      "XZZXI",
+      "IXZZX",
+      "XIXZZ",
+      "ZXIXZ"
+    ],
+    "generator_count": 4,
+    "original_input": {
+      "dataset_record": {
+        "path": "third_party/quantum-ai/data/benchmarks.json",
+        "locator": "entry name=='Perfect 5-Qubit Code'"
+      },
+      "notes": "B1 input is generators only (paper III-D1); no input circuit."
+    },
+    "required_output": "Stim circuit on n data qubits from |0>^n whose output is a +1 eigenstate of every generator (ancillas allowed).",
+    "success_criterion": "All k generators preserved per tools/check_stabilizers.py (success_rate == 1.0)."
+  },
+  "baseline_records": [
+    {
+      "record_id": "F-B1-PERFECT5-001.claude.1att900s",
+      "agent_label": "claude-opus-4.6",
+      "run_file": {
+        "path": "third_party/quantum-ai/B1/data/claude-opus-4.6/260219.1416.json",
+        "sha256": "7316c04fdb29d0903dd3f47ccb0e34a389979130bdd5a523d3e6a0c1af8157b9",
+        "run_started_at": "2026-02-19T14:16:19.222735",
+        "run_finished_at": "2026-02-20T10:03:11.686698"
+      },
+      "published_config_label": "1 att / 900s",
+      "output_circuit": {
+        "format": "stim",
+        "path": "fixtures/archive/F-B1-PERFECT5-001/claude_output_circuit.stim",
+        "normalized_sha256": "96d2727d78b0eb2036bdccd117e3ab96c067099ffa4ec626a4b34cf398eed2fb",
+        "source": {
+          "path": "third_party/quantum-ai/B1/data/claude-opus-4.6/260219.1416.json",
+          "locator": "results[0] (code_name=='Perfect 5-Qubit Code').circuit"
+        }
+      },
+      "verifier_result": {
+        "valid": false,
+        "preserved": 0,
+        "total": 4,
+        "per_generator": {
+          "XZZXI": false,
+          "IXZZX": false,
+          "XIXZZ": false,
+          "ZXIXZ": false
+        },
+        "elapsed_seconds": {
+          "status": "known",
+          "value": 64.52,
+          "source": [
+            {
+              "path": "third_party/quantum-ai/B1/data/claude-opus-4.6/260219.1416.json",
+              "locator": "results[0] (code_name=='Perfect 5-Qubit Code').elapsed_seconds"
+            }
+          ]
+        },
+        "verifier_calls_logged": {
+          "status": "unknown",
+          "reason": "B1 record has no per-attempt call log.",
+          "evidence_needed": "Raw harness transcript."
+        },
+        "source": {
+          "path": "third_party/quantum-ai/B1/data/claude-opus-4.6/260219.1416.json",
+          "locator": "results[0] (code_name=='Perfect 5-Qubit Code')"
+        }
+      },
+      "published_evidence": [
+        {
+          "claim": "Aggregate B1 Scap=10,772 for claude-opus-4.6 at 1 att/900s (Table II); per-instance outcome is NOT published in the paper.",
+          "source": {
+            "path": "third_party/paper/paper.txt",
+            "locator": "Table II, lines 439-452"
+          },
+          "rederived_from_stored_data": true
+        }
+      ],
+      "model": {
+        "status": "known",
+        "value": "claude-opus-4.6",
+        "source": [
+          {
+            "path": "third_party/quantum-ai/B1/data/claude-opus-4.6/260219.1416.json",
+            "locator": "metadata.model"
+          }
+        ]
+      },
+      "harness": {
+        "status": "unknown",
+        "reason": "Not in run metadata.",
+        "evidence_needed": "Per-run harness record."
+      },
+      "inference_settings": {
+        "status": "unknown",
+        "reason": "Not recorded.",
+        "evidence_needed": "Copilot session configuration."
+      },
+      "attempt_budget": {
+        "status": "known",
+        "value": 1,
+        "source": [
+          {
+            "path": "third_party/quantum-ai/B1/data/claude-opus-4.6/260219.1416.json",
+            "locator": "metadata.attempts"
+          }
+        ]
+      },
+      "timeout_policy": {
+        "status": "known",
+        "value": "900 s wall-clock limit per code instance",
+        "source": [
+          {
+            "path": "third_party/quantum-ai/B1/data/claude-opus-4.6/260219.1416.json",
+            "locator": "metadata.timeout"
+          },
+          {
+            "path": "third_party/paper/paper.txt",
+            "locator": "III-E2, Timeout bullet"
+          }
+        ]
+      },
+      "stopping_rule": {
+        "status": "known",
+        "value": "Agent stops by calling final_circuit once all stabilizers are preserved, or when the attempt budget of check_stabilizers_tool calls is exhausted (then submits best candidate).",
+        "source": [
+          {
+            "path": "third_party/quantum-ai/B1/prompts/default_prompt.txt",
+            "locator": "Tooling / output rules"
+          }
+        ]
+      },
+      "prompt": {
+        "path": "third_party/quantum-ai/B1/prompts/default_prompt.txt",
+        "sha256": "d631e81be8870a4858c67e1ed5b5213974a82be7b4f34c585aebaa89711bed4d",
+        "status": "recovered_from_history",
+        "recovered_from_commit": "6a9184b (name at run time: B1/prompts/state_prep_prompt4.txt (metadata.prompt_path); renamed with 0 content change in 6f715df)"
+      },
+      "token_usage": {
+        "status": "unavailable",
+        "reason": "Not recorded.",
+        "evidence_needed": "Provider usage logs."
+      },
+      "monetary_cost_usd": {
+        "status": "unavailable",
+        "reason": "Not recorded.",
+        "evidence_needed": "Billing records."
+      },
+      "evidence": [
+        {
+          "path": "third_party/quantum-ai/B1/data/claude-opus-4.6/260219.1416.json",
+          "locator": "results[0] (code_name=='Perfect 5-Qubit Code')"
+        },
+        {
+          "path": "fixtures/archive/F-B1-PERFECT5-001/claude_run_record.json"
+        }
+      ]
+    },
+    {
+      "record_id": "F-B1-PERFECT5-001.gpt.1att900s",
+      "agent_label": "gpt5.2",
+      "run_file": {
+        "path": "third_party/quantum-ai/B1/data/gpt5.2/260219.1416.json",
+        "sha256": "acc339ef935cba4ed6d43daf5c720f2077a3e52c69cb667aa13861c6aa392de1",
+        "run_started_at": "2026-02-19T14:16:02.120686",
+        "run_finished_at": "2026-02-20T10:00:30.043392"
+      },
+      "published_config_label": "1 att / 900s",
+      "output_circuit": {
+        "format": "stim",
+        "path": "fixtures/archive/F-B1-PERFECT5-001/gpt_output_circuit.stim",
+        "normalized_sha256": "7a6d203251fe1324a8b40260cf9265ca6af9b29648195befcb1492f3dab8c905",
+        "source": {
+          "path": "third_party/quantum-ai/B1/data/gpt5.2/260219.1416.json",
+          "locator": "results[0] (code_name=='Perfect 5-Qubit Code').circuit"
+        }
+      },
+      "verifier_result": {
+        "valid": true,
+        "preserved": 4,
+        "total": 4,
+        "per_generator": {
+          "XZZXI": true,
+          "IXZZX": true,
+          "XIXZZ": true,
+          "ZXIXZ": true
+        },
+        "elapsed_seconds": {
+          "status": "known",
+          "value": 59.06,
+          "source": [
+            {
+              "path": "third_party/quantum-ai/B1/data/gpt5.2/260219.1416.json",
+              "locator": "results[0] (code_name=='Perfect 5-Qubit Code').elapsed_seconds"
+            }
+          ]
+        },
+        "verifier_calls_logged": {
+          "status": "unknown",
+          "reason": "B1 record has no per-attempt call log.",
+          "evidence_needed": "Raw harness transcript."
+        },
+        "source": {
+          "path": "third_party/quantum-ai/B1/data/gpt5.2/260219.1416.json",
+          "locator": "results[0] (code_name=='Perfect 5-Qubit Code')"
+        }
+      },
+      "published_evidence": [
+        {
+          "claim": "Aggregate B1 Scap=10,646 for gpt5.2 at 1 att/900s (Table II); per-instance outcome is NOT published in the paper.",
+          "source": {
+            "path": "third_party/paper/paper.txt",
+            "locator": "Table II, lines 439-452"
+          },
+          "rederived_from_stored_data": true
+        }
+      ],
+      "model": {
+        "status": "known",
+        "value": "gpt5.2",
+        "source": [
+          {
+            "path": "third_party/quantum-ai/B1/data/gpt5.2/260219.1416.json",
+            "locator": "metadata.model"
+          }
+        ]
+      },
+      "harness": {
+        "status": "unknown",
+        "reason": "Not in run metadata.",
+        "evidence_needed": "Per-run harness record."
+      },
+      "inference_settings": {
+        "status": "unknown",
+        "reason": "Not recorded.",
+        "evidence_needed": "Copilot session configuration."
+      },
+      "attempt_budget": {
+        "status": "known",
+        "value": 1,
+        "source": [
+          {
+            "path": "third_party/quantum-ai/B1/data/gpt5.2/260219.1416.json",
+            "locator": "metadata.attempts"
+          }
+        ]
+      },
+      "timeout_policy": {
+        "status": "known",
+        "value": "900 s wall-clock limit per code instance",
+        "source": [
+          {
+            "path": "third_party/quantum-ai/B1/data/gpt5.2/260219.1416.json",
+            "locator": "metadata.timeout"
+          },
+          {
+            "path": "third_party/paper/paper.txt",
+            "locator": "III-E2, Timeout bullet"
+          }
+        ]
+      },
+      "stopping_rule": {
+        "status": "known",
+        "value": "Agent stops by calling final_circuit once all stabilizers are preserved, or when the attempt budget of check_stabilizers_tool calls is exhausted (then submits best candidate).",
+        "source": [
+          {
+            "path": "third_party/quantum-ai/B1/prompts/default_prompt.txt",
+            "locator": "Tooling / output rules"
+          }
+        ]
+      },
+      "prompt": {
+        "path": "third_party/quantum-ai/B1/prompts/default_prompt.txt",
+        "sha256": "d631e81be8870a4858c67e1ed5b5213974a82be7b4f34c585aebaa89711bed4d",
+        "status": "recovered_from_history",
+        "recovered_from_commit": "6a9184b (name at run time: B1/prompts/state_prep_prompt4.txt (metadata.prompt_path); renamed with 0 content change in 6f715df)"
+      },
+      "token_usage": {
+        "status": "unavailable",
+        "reason": "Not recorded.",
+        "evidence_needed": "Provider usage logs."
+      },
+      "monetary_cost_usd": {
+        "status": "unavailable",
+        "reason": "Not recorded.",
+        "evidence_needed": "Billing records."
+      },
+      "evidence": [
+        {
+          "path": "third_party/quantum-ai/B1/data/gpt5.2/260219.1416.json",
+          "locator": "results[0] (code_name=='Perfect 5-Qubit Code')"
+        },
+        {
+          "path": "fixtures/archive/F-B1-PERFECT5-001/gpt_run_record.json"
+        }
+      ]
+    }
+  ],
+  "scoring": {
+    "formula_refs": [
+      {
+        "path": "third_party/paper/paper.txt",
+        "locator": "Eq. 1-2, III-D1"
+      }
+    ],
+    "task_quality_factor": {
+      "status": "known",
+      "value": 1.0,
+      "source": [
+        {
+          "path": "third_party/paper/paper.txt",
+          "locator": "III-D1: B1 qi=1 for success"
+        }
+      ]
+    }
+  },
+  "provenance_ids": [
+    "prov.repo.quantum-ai",
+    "prov.paper.2604.21287v1",
+    "prov.prompt.B1.default"
+  ],
+  "unknown_fields": [
+    {
+      "field": "baseline_records[*].inference_settings",
+      "status": "unknown",
+      "evidence_needed": "Harness configuration used for the Feb-Mar 2026 runs (Copilot SDK session settings) from the authors."
+    },
+    {
+      "field": "baseline_records[*].harness",
+      "status": "unknown",
+      "evidence_needed": "Per-run harness record or author confirmation."
+    },
+    {
+      "field": "baseline_records[*].model (exact snapshot)",
+      "status": "unknown",
+      "evidence_needed": "Provider model id/snapshot string from Copilot session logs."
+    },
+    {
+      "field": "baseline_records[*].token_usage",
+      "status": "unavailable",
+      "evidence_needed": "Provider/Copilot usage logs for the original runs (probably not obtainable)."
+    },
+    {
+      "field": "baseline_records[*].monetary_cost_usd",
+      "status": "unavailable",
+      "evidence_needed": "Authors' billing records; not obtainable from repo."
+    },
+    {
+      "field": "benchmark.dataset_manifest.version",
+      "status": "unknown",
+      "evidence_needed": "Maintainer-declared dataset version."
+    },
+    {
+      "field": "baseline_records[*].verifier_result.verifier_calls_logged",
+      "status": "unknown",
+      "evidence_needed": "Raw harness transcript for the run, or B2 records (which list evaluations)."
+    },
+    {
+      "field": "baseline_records[*].verifier_result.metrics_output",
+      "status": "unavailable",
+      "evidence_needed": "B1 run records carry no gate/depth metrics; run tools/circuit_metric.py offline on the archived circuit (proposed, no model, no cost)."
+    }
+  ]
+}

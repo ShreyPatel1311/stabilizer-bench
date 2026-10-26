@@ -1,0 +1,305 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:iris-qec:schema:attempt_record:0.1.0-draft",
+  "title": "Attempt record",
+  "description": "One generation/repair attempt for one task within one run. An attempt is the unit that consumes the verifier-call budget in the benchmark harness. DRAFT (Week 1): not yet exercised against real runs.",
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,127}$"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sourceRef": {
+      "description": "Pointer to the evidence for a recorded fact. Every recorded fact must carry one.",
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "File path relative to the repository root."
+        },
+        "url": {
+          "type": "string"
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "locator": {
+          "type": "string",
+          "description": "Line range, JSON pointer, table/figure id, or record key within the source."
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "path"
+          ]
+        },
+        {
+          "required": [
+            "url"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "knowable": {
+      "description": "A value that may be unknown. Unknown/unavailable values are never silently omitted or guessed.",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "known"
+            },
+            "value": {},
+            "source": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/sourceRef"
+              },
+              "minItems": 1
+            },
+            "derived": {
+              "type": "boolean",
+              "description": "True if computed from recorded values rather than read directly."
+            }
+          },
+          "required": [
+            "status",
+            "value",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "unknown",
+                "unavailable",
+                "not_applicable"
+              ]
+            },
+            "reason": {
+              "type": "string"
+            },
+            "evidence_needed": {
+              "type": "string",
+              "description": "What artifact/measurement would resolve this field."
+            }
+          },
+          "required": [
+            "status",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "circuitRef": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "const": "stim"
+        },
+        "path": {
+          "type": "string"
+        },
+        "inline_text": {
+          "type": "string"
+        },
+        "normalized_sha256": {
+          "$ref": "#/$defs/sha256",
+          "description": "sha256 of UTF-8 text after the normalization in metric_dictionary (newlines unescaped, whitespace collapsed, comments dropped, trailing newline)."
+        },
+        "source": {
+          "$ref": "#/$defs/sourceRef"
+        }
+      },
+      "required": [
+        "format",
+        "normalized_sha256",
+        "source"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "path"
+          ]
+        },
+        {
+          "required": [
+            "inline_text"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "circuitMetrics": {
+      "type": "object",
+      "properties": {
+        "cx_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "volume": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "one_qubit_gates": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "two_qubit_gates": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "depth": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "seedRef": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "attempt_id",
+    "run_id",
+    "task_id",
+    "attempt_index",
+    "started_at",
+    "outcome",
+    "counts_against_budget"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0-draft"
+    },
+    "attempt_id": {
+      "$ref": "#/$defs/id"
+    },
+    "run_id": {
+      "$ref": "#/$defs/id"
+    },
+    "task_id": {
+      "$ref": "#/$defs/id"
+    },
+    "attempt_index": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "started_at": {
+      "$ref": "#/$defs/timestamp"
+    },
+    "finished_at": {
+      "$ref": "#/$defs/timestamp"
+    },
+    "strategy_tier": {
+      "enum": [
+        "classical_seed",
+        "peephole",
+        "targeted_rewrite",
+        "ensemble",
+        "flag_planner",
+        "single_shot_baseline",
+        "other"
+      ]
+    },
+    "action_class": {
+      "enum": [
+        "interventional",
+        "epistemic"
+      ]
+    },
+    "input_artifact_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/id"
+      }
+    },
+    "output_artifact_id": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/id"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "model_call_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/id"
+      }
+    },
+    "verifier_exchange_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/id"
+      }
+    },
+    "counts_against_budget": {
+      "type": "boolean"
+    },
+    "outcome": {
+      "enum": [
+        "valid_improved",
+        "valid_no_improvement",
+        "invalid_stabilizers",
+        "parse_error",
+        "ft_violation",
+        "timeout",
+        "tool_loop_failure",
+        "aborted",
+        "no_result"
+      ]
+    },
+    "failure_class": {
+      "enum": [
+        "syntax_error",
+        "stabilizer_not_preserved",
+        "no_improvement",
+        "fault_tolerance_violation",
+        "excess_overhead",
+        "timeout",
+        "other",
+        "none"
+      ]
+    },
+    "best_so_far_artifact_id": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/id"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "wall_clock_seconds": {
+      "$ref": "#/$defs/knowable"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

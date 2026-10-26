@@ -1,0 +1,389 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:iris-qec:schema:verifier_exchange:0.1.0-draft",
+  "title": "Verifier request / response",
+  "description": "A single oracle invocation. Discriminated by `kind`. Mirrors the benchmark tools (check_stabilizers, evaluate_optimization, check_fault_tolerance) without altering their semantics. DRAFT (Week 1): not yet exercised against real runs.",
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,127}$"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sourceRef": {
+      "description": "Pointer to the evidence for a recorded fact. Every recorded fact must carry one.",
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "File path relative to the repository root."
+        },
+        "url": {
+          "type": "string"
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "locator": {
+          "type": "string",
+          "description": "Line range, JSON pointer, table/figure id, or record key within the source."
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "path"
+          ]
+        },
+        {
+          "required": [
+            "url"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "knowable": {
+      "description": "A value that may be unknown. Unknown/unavailable values are never silently omitted or guessed.",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "known"
+            },
+            "value": {},
+            "source": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/sourceRef"
+              },
+              "minItems": 1
+            },
+            "derived": {
+              "type": "boolean",
+              "description": "True if computed from recorded values rather than read directly."
+            }
+          },
+          "required": [
+            "status",
+            "value",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "unknown",
+                "unavailable",
+                "not_applicable"
+              ]
+            },
+            "reason": {
+              "type": "string"
+            },
+            "evidence_needed": {
+              "type": "string",
+              "description": "What artifact/measurement would resolve this field."
+            }
+          },
+          "required": [
+            "status",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "circuitRef": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "const": "stim"
+        },
+        "path": {
+          "type": "string"
+        },
+        "inline_text": {
+          "type": "string"
+        },
+        "normalized_sha256": {
+          "$ref": "#/$defs/sha256",
+          "description": "sha256 of UTF-8 text after the normalization in metric_dictionary (newlines unescaped, whitespace collapsed, comments dropped, trailing newline)."
+        },
+        "source": {
+          "$ref": "#/$defs/sourceRef"
+        }
+      },
+      "required": [
+        "format",
+        "normalized_sha256",
+        "source"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "path"
+          ]
+        },
+        {
+          "required": [
+            "inline_text"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "circuitMetrics": {
+      "type": "object",
+      "properties": {
+        "cx_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "volume": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "one_qubit_gates": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "two_qubit_gates": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "depth": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "seedRef": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "required": [
+    "schema_version",
+    "kind",
+    "exchange_id"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0-draft"
+    },
+    "kind": {
+      "enum": [
+        "request",
+        "response"
+      ]
+    },
+    "exchange_id": {
+      "$ref": "#/$defs/id"
+    }
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "kind": {
+          "const": "request"
+        },
+        "tool": {
+          "enum": [
+            "check_stabilizers",
+            "evaluate_optimization",
+            "check_fault_tolerance"
+          ]
+        },
+        "benchmark_category": {
+          "enum": [
+            "B1_state_preparation",
+            "B2_circuit_optimization",
+            "B3_fault_tolerant_generation"
+          ]
+        },
+        "task_id": {
+          "$ref": "#/$defs/id"
+        },
+        "run_id": {
+          "$ref": "#/$defs/id"
+        },
+        "attempt_id": {
+          "$ref": "#/$defs/id"
+        },
+        "requested_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "candidate_circuit": {
+          "$ref": "#/$defs/circuitRef"
+        },
+        "baseline_circuit": {
+          "$ref": "#/$defs/circuitRef"
+        },
+        "stabilizer_generators": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "distance": {
+          "type": "integer"
+        },
+        "data_qubits": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "flag_qubits": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "counts_against_attempt_budget": {
+          "type": "boolean"
+        },
+        "verifier_impl": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "sha256": {
+                "$ref": "#/$defs/sha256"
+              }
+            },
+            "required": [
+              "path",
+              "sha256"
+            ]
+          }
+        }
+      },
+      "required": [
+        "tool",
+        "benchmark_category",
+        "task_id",
+        "run_id",
+        "attempt_id",
+        "requested_at",
+        "candidate_circuit",
+        "stabilizer_generators",
+        "counts_against_attempt_budget",
+        "verifier_impl"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "response"
+        },
+        "request_id": {
+          "$ref": "#/$defs/id"
+        },
+        "responded_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "status": {
+          "enum": [
+            "ok",
+            "parse_error",
+            "tool_error",
+            "timeout"
+          ]
+        },
+        "valid": {
+          "type": "boolean",
+          "description": "All k generators preserved (and B3: strictly higher FT than baseline)."
+        },
+        "per_generator": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "boolean"
+          }
+        },
+        "preserved": {
+          "type": "integer"
+        },
+        "total": {
+          "type": "integer"
+        },
+        "metrics": {
+          "$ref": "#/$defs/circuitMetrics"
+        },
+        "baseline_metrics": {
+          "$ref": "#/$defs/circuitMetrics"
+        },
+        "strict_improvement": {
+          "type": "boolean"
+        },
+        "ft_score": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "data_error_weight_max": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "latency_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "raw_output_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "error_message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "request_id",
+        "responded_at",
+        "status"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "ok"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "valid",
+              "preserved",
+              "total",
+              "latency_seconds"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
