@@ -11,6 +11,7 @@ Last updated 2026-10-26. Milestone M1 "Baseline and setup" (midterm §7.2, weeks
 | Isolated venv + hash-locked install (user-approved) | none | `env/requirements.lock` |
 | Mock harness self-test | none | `runs/smoke-000-mock/` |
 | Smoke test, B1 Steane, `claude-sonnet-4-5` (user-approved, $1 cap) | 3 requests | `runs/smoke-001-b1-steane/` |
+| Smoke tests, B2 and B3 on Steane and Perfect 5-Qubit (user-approved, $1 series cap) | 12 requests | `runs/smoke-002…005/` |
 
 IRIS-QEC code is written (`iris_qec/`, about 1,500 lines) but **has never been executed**: not the pipeline, not the tests. Only a Python syntax check was run. No baseline reproduction, no classical reference run, no B2/B3 runs.
 
@@ -24,12 +25,15 @@ IRIS-QEC code is written (`iris_qec/`, about 1,500 lines) but **has never been e
 6. **Schemas and metrics.** 8 draft schemas (fixture and provenance schemas exercised on data; the other six untested); 22-metric dictionary with missing-data policies.
 7. **Smoke test.** Harness → model → verifier → result → ledger works. One sample: 1/6 generators preserved (not solved); 7,178 input / 1,232 output tokens; 25 s; ≈ $0.04 (estimate at assumed $3 / $15 per Mtok). The agent's single check returned 0/6 and its submitted circuit scored 1/6 (not investigated).
 
+8. **B2/B3 smoke tests.** All four ran end to end (3 requests each, about $0.22 total estimated). None succeeded: in both B2 runs the single candidate drastically cut gates but broke every generator; in both B3 runs the only candidate raised the FT score (0.61, 0.78) but broke generators, so the harness returned the unmodified input (FT 0.0).
+
 ## Findings
 
 - The stock Anthropic harness sends no `max_tokens`, has no spend limit and logs no tokens; runs use `harness/smoke_launcher.py` (deviations DEV-1 to DEV-5, `runs/DEVIATIONS.md`). The stock harness was expected to fail without `max_tokens` but was not run.
 - Stored baseline runs (Feb–Mar 2026) were committed in May 2026, after the paper; HEAD is the correct pin. Dataset files unchanged since 2026-01-29.
 - B2 Steane starting circuit (23 CX) is GPT-5.2's own B1 output; Claude's B1 solution used 9 CX; Claude's B2 result was 21 CX.
 - The paper has no classical reference baseline; Stim 1.15.0 includes stabilizer→circuit synthesis (documentation checked, not run).
+- The stock B3 harness prints "Circuit generated successfully" even when it falls back to the unmodified input circuit (FT 0.0); its result files must be read, not the console.
 - The repo contains newer, unreviewed results (`claude-opus-5`, `gpt-5.6-sol`, `claude-fable-5-1`).
 - The paper states 14 code families; the project topic report says 12.
 

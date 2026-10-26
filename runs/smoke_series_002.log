@@ -1,0 +1,13 @@
+exported 93208e3468d2aa217dfe645bead0fb963cd8b279 -> /home/godseye/Public/Assignments/607/stabilizer-bench/runs/smoke-002-b2-steane/repo
+[series] running smoke-002-b2-steane (worst case $0.4858, spent so far $0.0000)
+[series] smoke-002-b2-steane: exit 0, 10660 in / 937 out tokens, est $0.0460; total $0.0460
+exported 93208e3468d2aa217dfe645bead0fb963cd8b279 -> /home/godseye/Public/Assignments/607/stabilizer-bench/runs/smoke-003-b3-steane/repo
+[series] running smoke-003-b3-steane (worst case $0.4858, spent so far $0.0460)
+[series] smoke-003-b3-steane: exit 0, 14186 in / 1499 out tokens, est $0.0650; total $0.1111
+exported 93208e3468d2aa217dfe645bead0fb963cd8b279 -> /home/godseye/Public/Assignments/607/stabilizer-bench/runs/smoke-004-b2-perfect5/repo
+[series] running smoke-004-b2-perfect5 (worst case $0.4858, spent so far $0.1111)
+[series] smoke-004-b2-perfect5: exit 0, 10772 in / 1045 out tokens, est $0.0480; total $0.1591
+exported 93208e3468d2aa217dfe645bead0fb963cd8b279 -> /home/godseye/Public/Assignments/607/stabilizer-bench/runs/smoke-005-b3-perfect5/repo
+[series] running smoke-005-b3-perfect5 (worst case $0.4858, spent so far $0.1591)
+[series] smoke-005-b3-perfect5: exit 0, 14098 in / 1323 out tokens, est $0.0621; total $0.2212
+[series] done; estimated total $0.2212 (assumed prices 3.0/15.0 USD per Mtok)

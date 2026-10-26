@@ -1,0 +1,22 @@
+{
+  "run_id": "smoke-004-b2-perfect5",
+  "task": "B2",
+  "code": "Perfect 5-Qubit Code",
+  "model_requested": "claude-sonnet-4-5",
+  "model_returned": "claude-sonnet-4-5-20250929",
+  "config": {
+    "attempts": 1,
+    "timeout_s": 900,
+    "max_tokens_per_request": 4096,
+    "max_requests": 4,
+    "harness": "stock anthropic harness via harness/smoke_launcher.py"
+  },
+  "outcome": "not solved: the single candidate cut two-qubit gates 19->4 and depth 22->7 but preserved 0/4 generators; harness status no_result",
+  "api_requests": 3,
+  "input_tokens": 10772,
+  "output_tokens": 1045,
+  "wall_clock_seconds": 23.25,
+  "cost_usd_estimate": 0.048,
+  "cost_basis": "ESTIMATE at ASSUMED $3/$15 per Mtok (not verified); check the Anthropic console",
+  "note": "Plumbing check (n=1, one attempt, not the paper model or config). Not a baseline reproduction."
+}

@@ -1,0 +1,10 @@
+[
+ {"run_id": "smoke-002-b2-steane", "script": "B2/run.py",
+  "args": ["--benchmarks", "/home/godseye/Public/Assignments/607/stabilizer-bench/runs/inputs/steane_only.circuit_dataset.jsonl", "--model", "claude-sonnet-4-5", "--harness", "anthropic", "--attempts", "1", "--timeout", "900"]},
+ {"run_id": "smoke-003-b3-steane", "script": "B3/run.py",
+  "args": ["--benchmarks", "/home/godseye/Public/Assignments/607/stabilizer-bench/runs/inputs/steane_only.circuit_dataset.jsonl", "--model", "claude-sonnet-4-5", "--harness", "anthropic", "--attempts", "1", "--timeout", "900"]},
+ {"run_id": "smoke-004-b2-perfect5", "script": "B2/run.py",
+  "args": ["--benchmarks", "/home/godseye/Public/Assignments/607/stabilizer-bench/runs/inputs/perfect5_only.circuit_dataset.jsonl", "--model", "claude-sonnet-4-5", "--harness", "anthropic", "--attempts", "1", "--timeout", "900"]},
+ {"run_id": "smoke-005-b3-perfect5", "script": "B3/run.py",
+  "args": ["--benchmarks", "/home/godseye/Public/Assignments/607/stabilizer-bench/runs/inputs/perfect5_only.circuit_dataset.jsonl", "--model", "claude-sonnet-4-5", "--harness", "anthropic", "--attempts", "1", "--timeout", "900"]}
+]

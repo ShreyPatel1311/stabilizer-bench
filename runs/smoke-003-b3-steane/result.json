@@ -1,0 +1,44 @@
+{
+    "metadata": {
+        "benchmarks_path": "/home/godseye/Public/Assignments/607/stabilizer-bench/runs/inputs/steane_only.circuit_dataset.jsonl",
+        "prompt_path": "/home/godseye/Public/Assignments/607/stabilizer-bench/runs/smoke-003-b3-steane/repo/B3/prompts/default_prompt.txt",
+        "model": "claude-sonnet-4-5",
+        "harness": "anthropic",
+        "attempts": 1,
+        "timeout": 900,
+        "started_at": "2026-10-26T16:09:01.699804",
+        "finished_at": "2026-10-26T16:09:29.444883"
+    },
+    "results": [
+        {
+            "code_name": "Steane",
+            "original_score": 0.0,
+            "start_time": "2026-10-26T16:09:01.848131",
+            "end_time": "2026-10-26T16:09:28.979815",
+            "runtime_seconds": 27.131684,
+            "best_output": {
+                "circuit": "CX 1 0 0 1 1 0\nH 0\nCX 0 3 0 4\nH 1\nCX 1 0 1 4 1 6 4 2 2 4 4 2 5 2 6 2 4 3 3 4 4 3\nH 3\nCX 3 5 3 6 4 5 6 4 6 5 5 6 6 5",
+                "ft_score": 0.0,
+                "ft_check": false,
+                "all_stabilized": true,
+                "stabilizer_details": {
+                    "XXIIXXI": true,
+                    "XIXIXIX": true,
+                    "IIIXXXX": true,
+                    "ZZIIZZI": true,
+                    "ZIZIZIZ": true,
+                    "IIIZZZZ": true
+                },
+                "ALL TRUE": false
+            },
+            "generated_circuits": [
+                {
+                    "circuit": "CX 1 0 0 1 1 0\nH 0\nCX 7 0 0 7 0 3 0 4 7 0\nH 1\nCX 8 1 1 8 1 0 1 4 1 6 8 1 9 4 4 9 4 2 2 4 4 2 5 2 6 2 9 4 10 4 4 10 4 3 3 4 4 3 10 4\nH 3\nCX 11 3 3 11 3 5 3 6 11 3 12 4 4 12 4 5 12 4 13 6 6 13 6 4 6 5 5 6 6 5 13 6\nM 7 8 9 10 11 12 13",
+                    "ft_score": 0.6116504854368932,
+                    "all_stabilized": false,
+                    "preserved_stabilizers": 2
+                }
+            ]
+        }
+    ]
+}

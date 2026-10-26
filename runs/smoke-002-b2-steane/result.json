@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "dataset_path": "/home/godseye/Public/Assignments/607/stabilizer-bench/runs/inputs/steane_only.circuit_dataset.jsonl",
+    "prompt_path": "/home/godseye/Public/Assignments/607/stabilizer-bench/runs/smoke-002-b2-steane/repo/B2/prompts/default_prompt.txt",
+    "model": "claude-sonnet-4-5",
+    "harness": "anthropic",
+    "max_attempts": 1,
+    "timeout": 900,
+    "limit": null,
+    "started_at": "2026-10-26T16:08:40.285995",
+    "finished_at": "2026-10-26T16:08:59.754752"
+  },
+  "results": [
+    {
+      "code_name": "Steane",
+      "baseline_circuit": "CX 1 0 0 1 1 0\nH 0\nCX 0 3 0 4\nH 1\nCX 1 0 1 4 1 6 4 2 2 4 4 2 5 2 6 2 4 3 3 4 4 3\nH 3\nCX 3 5 3 6 4 5 6 4 6 5 5 6 6 5\n",
+      "baseline_metrics": {
+        "cx_count": 23,
+        "volume": 26,
+        "one_qubit_gates": 3,
+        "two_qubit_gates": 23,
+        "depth": 21
+      },
+      "optimized_circuit": null,
+      "valid": false,
+      "better": false,
+      "status": "no_result",
+      "evaluations": [
+        {
+          "circuit": "H 0 1 2 3 4 5\nCX 0 6 1 6 2 6 3 6 4 6 5 6\nH 3 4 5\nCX 3 0 3 1 4 0 4 2 5 1 5 2\nH 1 2\nCX 1 0 2 0",
+          "preserved_stabilizers": 0,
+          "valid": false,
+          "candidate": {
+            "cx_count": 14,
+            "volume": 25,
+            "one_qubit_gates": 11,
+            "two_qubit_gates": 14,
+            "depth": 12
+          },
+          "baseline": {
+            "cx_count": 23,
+            "volume": 26,
+            "one_qubit_gates": 3,
+            "two_qubit_gates": 23,
+            "depth": 21
+          },
+          "better": true
+        }
+      ],
+      "elapsed_seconds": 19.47,
+      "started_at": "2026-10-26T16:08:40.286091",
+      "finished_at": "2026-10-26T16:08:59.754066"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "run_id": "smoke-002-b2-steane",
+  "task": "B2",
+  "code": "Steane",
+  "model_requested": "claude-sonnet-4-5",
+  "model_returned": "claude-sonnet-4-5-20250929",
+  "config": {
+    "attempts": 1,
+    "timeout_s": 900,
+    "max_tokens_per_request": 4096,
+    "max_requests": 4,
+    "harness": "stock anthropic harness via harness/smoke_launcher.py"
+  },
+  "outcome": "not solved: the single evaluate_optimization call cut two-qubit gates 23->14 and depth 21->12 but preserved 0/6 generators; harness status no_result",
+  "api_requests": 3,
+  "input_tokens": 10660,
+  "output_tokens": 937,
+  "wall_clock_seconds": 19.45,
+  "cost_usd_estimate": 0.046,
+  "cost_basis": "ESTIMATE at ASSUMED $3/$15 per Mtok (not verified); check the Anthropic console",
+  "note": "Plumbing check (n=1, one attempt, not the paper model or config). Not a baseline reproduction."
+}

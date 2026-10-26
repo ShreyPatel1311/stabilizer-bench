@@ -1,0 +1,21 @@
+{
+  "script": "B3/run.py",
+  "argv": [
+    "/home/godseye/Public/Assignments/607/stabilizer-bench/harness/smoke_launcher.py",
+    "--",
+    "--benchmarks",
+    "/home/godseye/Public/Assignments/607/stabilizer-bench/runs/inputs/steane_only.circuit_dataset.jsonl",
+    "--model",
+    "claude-sonnet-4-5",
+    "--harness",
+    "anthropic",
+    "--attempts",
+    "1",
+    "--timeout",
+    "900",
+    "--output",
+    "/home/godseye/Public/Assignments/607/stabilizer-bench/runs/smoke-003-b3-steane/result.json"
+  ],
+  "max_tokens": 4096,
+  "max_requests": 4
+}

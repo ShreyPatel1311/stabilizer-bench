@@ -7,7 +7,8 @@ urllib.request.urlopen inside the process to:
   DEV-1  inject/limit `max_tokens` on every request (SMOKE_MAX_TOKENS, default 8192);
   DEV-2  refuse more than SMOKE_MAX_REQUESTS requests (default 4) and append per-request usage to a JSONL ledger.
 Headers/API keys are never written. SMOKE_MOCK=1 replaces the network with a local scripted fake (no key, no network).
-Usage: SMOKE_LEDGER=<file> python smoke_launcher.py -- <args for B1/run.py>
+Usage: SMOKE_REPO=<export> SMOKE_LEDGER=<file> [SMOKE_SCRIPT=B2/run.py] [SMOKE_ENV_FILE=<.env>] python smoke_launcher.py -- <args for the runner>
+SMOKE_ENV_FILE loads ANTHROPIC_API_KEY from an existing user-created .env into this process only (never printed or copied).
 """
 import io, json, os, sys, time, runpy, urllib.request, urllib.error
 
@@ -16,8 +17,12 @@ LEDGER = os.environ["SMOKE_LEDGER"]
 MAX_TOK = int(os.environ.get("SMOKE_MAX_TOKENS", "8192"))
 MAX_REQ = int(os.environ.get("SMOKE_MAX_REQUESTS", "4"))
 MOCK = os.environ.get("SMOKE_MOCK") == "1"
+SCRIPT = os.environ.get("SMOKE_SCRIPT", "B1/run.py")
 if MOCK:
     os.environ["ANTHROPIC_API_KEY"] = "mock-not-a-real-key"
+elif os.environ.get("SMOKE_ENV_FILE"):
+    from dotenv import load_dotenv
+    load_dotenv(os.environ["SMOKE_ENV_FILE"], override=False)
 
 sys.path.insert(0, os.path.join(REPO, "tools"))
 import agent  # noqa: E402,F401  (loads tools/.env if present)
@@ -69,5 +74,5 @@ def guarded(request, timeout=None):
 
 urllib.request.urlopen = guarded
 args = sys.argv[sys.argv.index("--") + 1:]
-sys.argv = [os.path.join(REPO, "B1/run.py")] + args
+sys.argv = [os.path.join(REPO, SCRIPT)] + args
 runpy.run_path(sys.argv[0], run_name="__main__")
