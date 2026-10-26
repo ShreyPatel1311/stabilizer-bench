@@ -2,8 +2,6 @@
 
 Goal: build and evaluate an AI-agent pipeline for **quantum error-correction (QEC) circuit synthesis** on the existing [StabilizerBench](https://github.com/uw-math-ai/quantum-ai) benchmark (Paz et al., arXiv:2604.21287), and find out what LLM agents add beyond classical synthesis tools.
 
-> **Status (2026-10-26): foundation phase.** The benchmark is pinned and inventoried, the stock harness runs end to end, and a smoke test has been executed before running ablation studies. The IRIS-QEC pipeline is implemented in `iris_qec/`.
-
 ## What the benchmark is
 
 Stabilizer codes protect quantum information by spreading it across many qubits. A code is defined by Pauli *stabilizer generators* (e.g. `XXIIXXI`); a correct encoded state is left unchanged by every generator. Stabilizer circuits can be simulated in polynomial time (Gottesman–Knill), so the benchmark grades every answer exactly with the [Stim](https://github.com/quantumlib/Stim) simulator.
