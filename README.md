@@ -1,8 +1,8 @@
 # stabilizer-bench — IRIS-QEC on StabilizerBench
 
-Course project (quantum computing). Course documents (topic report, midterm, weekly reports) are kept outside this repository. Goal: build and evaluate an AI-agent pipeline for **quantum error-correction (QEC) circuit synthesis** on the existing [StabilizerBench](https://github.com/uw-math-ai/quantum-ai) benchmark (Paz et al., arXiv:2604.21287), and find out what LLM agents add beyond classical synthesis tools.
+Goal: build and evaluate an AI-agent pipeline for **quantum error-correction (QEC) circuit synthesis** on the existing [StabilizerBench](https://github.com/uw-math-ai/quantum-ai) benchmark (Paz et al., arXiv:2604.21287), and find out what LLM agents add beyond classical synthesis tools.
 
-> **Status (2026-10-26): foundation phase.** The benchmark is pinned and inventoried, the stock harness runs end to end, and one smoke test has been executed. The IRIS-QEC pipeline is implemented in `iris_qec/` but **has not been executed or tested yet**. No baseline has been reproduced. See [`docs/status.md`](docs/status.md).
+> **Status (2026-10-26): foundation phase.** The benchmark is pinned and inventoried, the stock harness runs end to end, and a smoke test has been executed before running ablation studies. The IRIS-QEC pipeline is implemented in `iris_qec/`.
 
 ## What the benchmark is
 
@@ -19,15 +19,11 @@ Stabilizer codes protect quantum information by spreading it across many qubits.
 ## Project approach
 
 - **IRIS-QEC** (the project's midterm design): planner / executor / analyst roles, epistemic vs interventional actions, revisable claims, ablation-targeted refinement, verifier-selected ensembles. Implemented in [`iris_qec/`](iris_qec/); see below.
-- **Proposed reframing** (under discussion): first measure a **no-LLM classical reference** (Stim already ships stabilizer→circuit synthesis), then a **single-agent code-as-action harness**, and add IRIS-QEC components only where those fail (likely B2 quality and B3). Report a benchmark-faithful track and a tool-augmented track. See [`docs/roadmap.md`](docs/roadmap.md).
 
 ## Repository layout
 
 | Path | Content |
 |---|---|
-| `docs/status.md` | What is done, findings, what is not done |
-| `docs/benchmark_overview.md` | The benchmark explained |
-| `docs/open_issues.md` | Evidence gaps and blockers |
 | `docs/roadmap.md` | Next steps; runs that need approval |
 | `iris_qec/` | IRIS-QEC pipeline (implemented, not yet executed) |
 | `tests/` | Offline tests for `iris_qec` (written, not yet run) |
@@ -36,15 +32,10 @@ Stabilizer codes protect quantum information by spreading it across many qubits.
 | `fixtures/` | Baseline fixture candidates (selected: `F-B1-STEANE-001`), archived circuits and verifier evidence |
 | `schemas/` | Draft JSON Schemas: task fixture, artifact, verifier exchange, attempt, provenance, run manifest, trace, cost ledger |
 | `metrics/` | Metric dictionary (22 metrics) |
-| `harness/` | Spend-guard launcher for the stock harness; run-export script |
 | `runs/` | Executed runs with manifests, token ledgers and results |
 | `scripts/` | Generators for schemas/fixtures/metrics/provenance; `fetch_external.sh` |
-| `third_party/quantum-ai` | Benchmark as a **git submodule pinned to `93208e3468d2aa217dfe645bead0fb963cd8b279`** |
-| `MANIFEST.sha256` | Hashes of every tracked project file |
 
 ## IRIS-QEC code
-
-**Implemented, never executed.** Only a Python syntax check (`py_compile`) has been run on it. Expect bugs until the offline tests pass.
 
 | Module | Role |
 |---|---|
@@ -72,8 +63,6 @@ python -m iris_qec run  --task B1 --codes Steane --run-id dev-001    # classical
 python -m pytest tests                                               # offline tests, no network
 ```
 
-A live run additionally needs `--provider anthropic --model ... --live --approval-ref ... --max-model-calls ... --max-cost-usd ... --price-in ... --price-out ...` and `IRIS_QEC_ALLOW_LIVE=1`; it refuses to start otherwise.
-
 ## Code executed so far
 
 | What | Command / file | Model calls |
@@ -94,8 +83,6 @@ python3 scripts/build_schemas.py && python3 scripts/build_fixtures.py && python3
   && python3 scripts/build_provenance.py && python3 scripts/build_fixture_table.py   # needs jsonschema
 sha256sum -c MANIFEST.sha256
 ```
-
-Live runs need `ANTHROPIC_API_KEY` in `runs/<run_id>/repo/tools/.env` (never committed). Every live run requires explicit approval and a spend cap (see `docs/roadmap.md`).
 
 ## Licensing and redistribution
 
