@@ -80,6 +80,13 @@ class TaskRun:
         self.rec.current_task = t.task_id
         self.rec.event("task_start", payload={"message": t.code_name})
         root: list[str] = []
+        if t.category in ("B2", "B3") and not t.baseline_circuit:
+            self.rec.event("task_end", duration=0.0, payload={"message": "skipped: dataset has no input circuit"})
+            return {"task_id": t.task_id, "code_name": t.code_name, "category": t.category, "family": t.family,
+                    "generators": len(t.generators), "solved": False, "skipped": "no_input_circuit",
+                    "final_artifact": None, "final_circuit": None, "preserved": 0, "total": len(t.generators),
+                    "metrics": None, "quality": None, "ft_score": None, "baseline_ft": None, "candidates": 0,
+                    "steps": 0, "official_calls": 0, "diagnostic_calls": 0, "wall_clock_seconds": 0.0}
         if t.baseline_circuit is not None and cfg.track == "augmented":
             aid, _ = self.consider("input_baseline", t.baseline_circuit, [], "root_input", "input")
             root = [aid]

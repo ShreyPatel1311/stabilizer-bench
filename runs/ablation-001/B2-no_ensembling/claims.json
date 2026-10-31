@@ -1,0 +1,1394 @@
+[
+  {
+    "claim_id": "claim-0001",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Perfect 5-Qubit Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00007"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0002",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Perfect 5-Qubit Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00007"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0003",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Perfect 5-Qubit Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00009"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0004",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Perfect 5-Qubit Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00009"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0005",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Perfect 5-Qubit Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00006"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0006",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Perfect 5-Qubit Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00006"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0007",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Steane"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00016"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0008",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Steane"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00016"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0009",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Steane"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00018"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0010",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Steane"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00018"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0011",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Steane"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00014"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0012",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Steane"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00014"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0013",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Shor"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00025"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0014",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Shor"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00025"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0015",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Shor"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00027"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0016",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Shor"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00027"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0017",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Shor"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00023"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0018",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Shor"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00023"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0019",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Tetrahedral"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00034"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0020",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Tetrahedral"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00034"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0021",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Tetrahedral"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00036"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0022",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Tetrahedral"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00036"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0023",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Tetrahedral"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00033"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0024",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Tetrahedral"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00033"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0025",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Hamming"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00043"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0026",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Hamming"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00043"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0027",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Hamming"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00045"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0028",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Hamming"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00045"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0029",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Hamming"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00042"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0030",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Hamming"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00042"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0031",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Carbon"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00052"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0032",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Carbon"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00052"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0033",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Carbon"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00054"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0034",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Carbon"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00054"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0035",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Carbon"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00051"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0036",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Carbon"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00051"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0037",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Golay"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00061"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0038",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Golay"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00061"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0039",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Golay"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00063"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0040",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Golay"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00063"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0041",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Golay"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00060"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0042",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Golay"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00060"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0043",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Iceberg Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00070",
+      "B2-no_ensembling.art.00079",
+      "B2-no_ensembling.art.00088"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0044",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Iceberg Code m=2"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00070"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0045",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Iceberg Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00072",
+      "B2-no_ensembling.art.00081",
+      "B2-no_ensembling.art.00090"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0046",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Iceberg Code m=2"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00072"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0047",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Iceberg Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00067",
+      "B2-no_ensembling.art.00076",
+      "B2-no_ensembling.art.00085"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0048",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Iceberg Code m=2"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00067"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0049",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Iceberg Code m=3"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00079"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0050",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Iceberg Code m=3"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00081"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0051",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Iceberg Code m=3"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00076"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0052",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Iceberg Code m=4"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00088"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0053",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Iceberg Code m=4"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00090"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0054",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Iceberg Code m=4"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00085"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0055",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Hypercube Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00097",
+      "B2-no_ensembling.art.00106"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0056",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Hypercube Code l=1"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00097"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0057",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Hypercube Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00099",
+      "B2-no_ensembling.art.00108"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0058",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Hypercube Code l=1"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00099"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0059",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Hypercube Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00094",
+      "B2-no_ensembling.art.00105"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0060",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Hypercube Code l=1"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00094"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0061",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Hypercube Code l=2"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00106"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0062",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Hypercube Code l=2"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00108"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0063",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Hypercube Code l=2"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00105"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0064",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Hex Color Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00115",
+      "B2-no_ensembling.art.00124",
+      "B2-no_ensembling.art.00133"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0065",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Hex Color Code d=3"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00115"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0066",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Hex Color Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00117",
+      "B2-no_ensembling.art.00126",
+      "B2-no_ensembling.art.00135"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0067",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Hex Color Code d=3"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00117"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0068",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Hex Color Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00113",
+      "B2-no_ensembling.art.00123",
+      "B2-no_ensembling.art.00132"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0069",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Hex Color Code d=3"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00113"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0070",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Hex Color Code d=5"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00124"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0071",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Hex Color Code d=5"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00126"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0072",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Hex Color Code d=5"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00123"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0073",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Hex Color Code d=7"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00133"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0074",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Hex Color Code d=7"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00135"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0075",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Hex Color Code d=7"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00132"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0076",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Square Octagon Color Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00142",
+      "B2-no_ensembling.art.00151",
+      "B2-no_ensembling.art.00160"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0077",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Square Octagon Color Code d=3"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00142"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0078",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Square Octagon Color Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00144",
+      "B2-no_ensembling.art.00153",
+      "B2-no_ensembling.art.00162"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0079",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Square Octagon Color Code d=3"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00144"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0080",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Square Octagon Color Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00140",
+      "B2-no_ensembling.art.00150",
+      "B2-no_ensembling.art.00159"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0081",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Square Octagon Color Code d=3"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00140"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0082",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Square Octagon Color Code d=5"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00151"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0083",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Square Octagon Color Code d=5"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00153"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0084",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Square Octagon Color Code d=5"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00150"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0085",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Square Octagon Color Code d=7"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00160"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0086",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Square Octagon Color Code d=7"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00162"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0087",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Square Octagon Color Code d=7"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00159"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0088",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Rotated Surface Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00169",
+      "B2-no_ensembling.art.00178",
+      "B2-no_ensembling.art.00187"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0089",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Rotated Surface Code d=3"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00169"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0090",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Rotated Surface Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00171",
+      "B2-no_ensembling.art.00180",
+      "B2-no_ensembling.art.00189"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0091",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Rotated Surface Code d=3"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00171"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0092",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "Rotated Surface Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00167",
+      "B2-no_ensembling.art.00175",
+      "B2-no_ensembling.art.00186"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0093",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Rotated Surface Code d=3"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00167"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0094",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Rotated Surface Code d=5"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00178"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0095",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Rotated Surface Code d=5"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00180"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0096",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Rotated Surface Code d=5"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00175"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0097",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Rotated Surface Code d=7"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00187"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0098",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Rotated Surface Code d=7"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00189"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0099",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "Rotated Surface Code d=7"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00186"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0100",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "4-Qubit Detector Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00196"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0101",
+    "statement": "action 'peephole' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "4-Qubit Detector Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00196"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0102",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "4-Qubit Detector Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00198"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0103",
+    "statement": "action 'resynthesize' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "4-Qubit Detector Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00198"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0104",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "family": "4-Qubit Detector Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00193"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0105",
+    "statement": "action 'delete_segments' improves the B2 objective",
+    "scope": {
+      "task": "B2",
+      "base_code": "4-Qubit Detector Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B2-no_ensembling.art.00193"
+    ],
+    "status": "invalidated"
+  }
+]

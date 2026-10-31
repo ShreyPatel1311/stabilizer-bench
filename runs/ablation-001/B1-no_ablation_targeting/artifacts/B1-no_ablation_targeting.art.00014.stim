@@ -1,0 +1,28 @@
+H 0
+H 1
+H 2
+H 3
+H 4
+H 5
+H 6
+H 7
+H 8
+CZ 0 2
+CZ 1 2
+CZ 2 6
+CZ 2 7
+CZ 2 8
+CZ 3 4
+CZ 3 5
+CZ 3 6
+CZ 3 7
+CZ 3 8
+X 0
+Z 2
+H 0
+H 1
+H 4
+H 5
+H 6
+H 7
+H 8

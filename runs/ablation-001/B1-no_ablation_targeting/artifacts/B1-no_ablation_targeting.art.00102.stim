@@ -1,0 +1,22 @@
+H 0
+H 1
+H 3
+CX 0 1
+CX 0 3
+CX 0 6
+CX 0 8
+CX 6 1
+CX 1 6
+CX 6 1
+CX 1 5
+H 2
+CX 2 5
+CX 3 4
+CX 6 4
+CX 4 6
+CX 6 4
+CX 4 5
+CX 4 6
+CX 4 8
+CX 8 6
+CX 8 7

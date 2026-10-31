@@ -57,7 +57,7 @@ class VerifierGateway:
         self.diagnostic_calls = 0
         self.baseline_metrics = bm.compute_metrics(task.baseline_circuit).as_dict() if task.baseline_circuit else None
         self.baseline_ft = None
-        if task.category == "B3":
+        if task.category == "B3" and task.baseline_circuit:
             data = list(range(task.n))
             flags = sorted(qubits_used(to_ops(task.baseline_circuit)) - set(data))
             self.baseline_ft = bm.ft_score(normalize_text(task.baseline_circuit), data, flags, task.distance)
@@ -73,7 +73,9 @@ class VerifierGateway:
         metrics = bm.compute_metrics(text).as_dict()
         v = Verdict(valid=preserved == len(per), parse_ok=True, preserved=preserved, total=len(per),
                     per_generator=per, metrics=metrics)
-        if self.task.category == "B2":
+        if self.task.category in ("B2", "B3") and not self.task.baseline_circuit:
+            v.valid, v.error = False, "dataset has no input circuit for this instance"
+        elif self.task.category == "B2":
             better, _ = bm.is_strictly_more_optimal(text, self.task.baseline_circuit)
             b = self.baseline_metrics
             v.better = better

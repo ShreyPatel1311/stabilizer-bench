@@ -1,0 +1,16 @@
+{
+  "schema_version": "0.1.0-draft",
+  "ledger_id": "B1-no_epistemic.ledger",
+  "run_id": "B1-no_epistemic",
+  "currency": "USD",
+  "pricing": null,
+  "totals": {
+    "model_calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": null,
+    "complete": true,
+    "verifier_official": 24,
+    "verifier_diagnostic": 120
+  }
+}

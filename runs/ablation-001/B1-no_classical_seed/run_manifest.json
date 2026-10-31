@@ -1,0 +1,185 @@
+{
+  "schema_version": "0.1.0-draft",
+  "run_id": "B1-no_classical_seed",
+  "run_type": "pipeline_validation",
+  "created_at": "2026-10-31T22:23:08.814610Z",
+  "approval": {
+    "live_model_calls": false,
+    "approved_by": null,
+    "approval_ref": null,
+    "max_cost_usd": null
+  },
+  "benchmark": {
+    "repo_url": "https://github.com/uw-math-ai/quantum-ai",
+    "commit": "93208e3468d2aa217dfe645bead0fb963cd8b279",
+    "dataset_manifest_sha256": "883a1dd504cbd630ce227af777d7a7892b294fdacfb2395c8b2b8fe8f56c7011",
+    "verifier_impl": [
+      {
+        "path": "third_party/quantum-ai/tools/check_stabilizers.py",
+        "sha256": "32a3406df32f6776a16af3b63d0857f416761c70b85cd91a653bc628578d7a20"
+      },
+      {
+        "path": "third_party/quantum-ai/tools/circuit_metric.py",
+        "sha256": "35f28ac8e5ab22ecd42c576848624428748d4317046e613433c2c038e04447f8"
+      },
+      {
+        "path": "third_party/quantum-ai/tools/check_error_propagation.py",
+        "sha256": "19af2f08a3c9aa655f8a2620555bf4ce4e1b6230732baae4c5f8c7402bbc604b"
+      }
+    ]
+  },
+  "environment": {
+    "os": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "hardware": "x86_64",
+    "packages": {
+      "stim": "1.15.0",
+      "iris_qec": "0.1.0"
+    },
+    "lock_ref": {
+      "path": "env/requirements.lock"
+    },
+    "env_vars_recorded": [
+      "ANTHROPIC_API_KEY (name only)"
+    ]
+  },
+  "pipeline": {
+    "name": "IRIS-QEC",
+    "version": "0.1.0",
+    "components": [
+      {
+        "name": "classical_seed",
+        "enabled": false
+      },
+      {
+        "name": "epistemic",
+        "enabled": true
+      },
+      {
+        "name": "claims",
+        "enabled": true
+      },
+      {
+        "name": "ablation_targeting",
+        "enabled": true
+      },
+      {
+        "name": "ensembling",
+        "enabled": true
+      },
+      {
+        "name": "llm",
+        "enabled": false
+      }
+    ],
+    "tools_disclosed": [
+      "benchmark oracles (check_stabilizers, circuit_metric, check_error_propagation)",
+      "stim.Tableau.from_stabilizers / to_circuit",
+      "peephole simplifier",
+      "flag planner"
+    ]
+  },
+  "model": {
+    "provider": "none",
+    "model_id": "none"
+  },
+  "task_selection": {
+    "fixture_ids": [],
+    "task_ids": [
+      "StabilizerBench.B1.Perfect_5-Qubit_Code",
+      "StabilizerBench.B1.Steane",
+      "StabilizerBench.B1.Shor",
+      "StabilizerBench.B1.Tetrahedral",
+      "StabilizerBench.B1.Hamming",
+      "StabilizerBench.B1.Carbon",
+      "StabilizerBench.B1.Golay",
+      "StabilizerBench.B1.BB_Code_n=72",
+      "StabilizerBench.B1.BB_Code_n=90",
+      "StabilizerBench.B1.Iceberg_Code_m=2",
+      "StabilizerBench.B1.Iceberg_Code_m=3",
+      "StabilizerBench.B1.Iceberg_Code_m=4",
+      "StabilizerBench.B1.Hypercube_Code_l=1",
+      "StabilizerBench.B1.Hypercube_Code_l=2",
+      "StabilizerBench.B1.Hex_Color_Code_d=3",
+      "StabilizerBench.B1.Hex_Color_Code_d=5",
+      "StabilizerBench.B1.Hex_Color_Code_d=7",
+      "StabilizerBench.B1.Square_Octagon_Color_Code_d=3",
+      "StabilizerBench.B1.Square_Octagon_Color_Code_d=5",
+      "StabilizerBench.B1.Square_Octagon_Color_Code_d=7",
+      "StabilizerBench.B1.Rotated_Surface_Code_d=3",
+      "StabilizerBench.B1.Rotated_Surface_Code_d=5",
+      "StabilizerBench.B1.Rotated_Surface_Code_d=7",
+      "StabilizerBench.B1.4-Qubit_Detector_Code"
+    ],
+    "split": "explicit list",
+    "seed": 0
+  },
+  "budget": {
+    "attempt_budget": 1,
+    "timeout_seconds": 120,
+    "stopping_rule": "stop on planner 'stop', 3 non-improving steps, 12 steps, timeout, or attempt budget",
+    "max_model_calls": 0,
+    "max_cost_usd": 0.0
+  },
+  "outputs": {
+    "results_path": "results.json",
+    "trace_path": "trace.jsonl",
+    "cost_ledger_path": "cost_ledger.json"
+  },
+  "config": {
+    "run_id": "B1-no_classical_seed",
+    "task": "B1",
+    "codes": [
+      "Perfect 5-Qubit Code",
+      "Steane",
+      "Shor",
+      "Tetrahedral",
+      "Hamming",
+      "Carbon",
+      "Golay",
+      "BB Code n=72",
+      "BB Code n=90",
+      "Iceberg Code m=2",
+      "Iceberg Code m=3",
+      "Iceberg Code m=4",
+      "Hypercube Code l=1",
+      "Hypercube Code l=2",
+      "Hex Color Code d=3",
+      "Hex Color Code d=5",
+      "Hex Color Code d=7",
+      "Square Octagon Color Code d=3",
+      "Square Octagon Color Code d=5",
+      "Square Octagon Color Code d=7",
+      "Rotated Surface Code d=3",
+      "Rotated Surface Code d=5",
+      "Rotated Surface Code d=7",
+      "4-Qubit Detector Code"
+    ],
+    "limit": null,
+    "track": "augmented",
+    "components": {
+      "classical_seed": false,
+      "epistemic": true,
+      "claims": true,
+      "ablation_targeting": true,
+      "ensembling": true,
+      "llm": false
+    },
+    "budget": {
+      "attempt_budget": 1,
+      "timeout_seconds": 120,
+      "max_iterations": 12,
+      "patience": 3,
+      "max_model_calls": 0,
+      "max_output_tokens_per_call": 4096,
+      "max_cost_usd": 0.0
+    },
+    "model_provider": "none",
+    "model_id": null,
+    "pricing": null,
+    "segment_count": 6,
+    "max_flags": 6,
+    "claims_path": null,
+    "seed": 0
+  }
+}

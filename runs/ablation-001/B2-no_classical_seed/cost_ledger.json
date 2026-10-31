@@ -1,0 +1,16 @@
+{
+  "schema_version": "0.1.0-draft",
+  "ledger_id": "B2-no_classical_seed.ledger",
+  "run_id": "B2-no_classical_seed",
+  "currency": "USD",
+  "pricing": null,
+  "totals": {
+    "model_calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": null,
+    "complete": true,
+    "verifier_official": 19,
+    "verifier_diagnostic": 591
+  }
+}

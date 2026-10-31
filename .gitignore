@@ -3,6 +3,7 @@
 **/.env
 # local environment
 env/venv/
+env/venv-dev/
 __pycache__/
 # per-run pristine exports of the benchmark (upstream has no license; never redistributed)
 runs/*/repo/

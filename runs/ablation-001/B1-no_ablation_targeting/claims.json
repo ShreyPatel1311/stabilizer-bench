@@ -1,0 +1,1010 @@
+[
+  {
+    "claim_id": "claim-0001",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "Perfect 5-Qubit Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00005"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0002",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Perfect 5-Qubit Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00005"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0003",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "Perfect 5-Qubit Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00003"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0004",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Perfect 5-Qubit Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00003"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0005",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "Steane"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00010"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0006",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Steane"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00010"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0007",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "Steane"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00008"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0008",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Steane"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00008"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0009",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "Shor"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00015"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0010",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Shor"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00015"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0011",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "Shor"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00014"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0012",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Shor"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00014"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0013",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "Tetrahedral"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00020"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0014",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Tetrahedral"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00020"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0015",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "Tetrahedral"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00019"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0016",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Tetrahedral"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00019"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0017",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "Hamming"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00025"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0018",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Hamming"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00025"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0019",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "Hamming"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00023"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0020",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Hamming"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00023"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0021",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "Carbon"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00030"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0022",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Carbon"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00030"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0023",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "Carbon"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00029"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0024",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Carbon"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00029"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0025",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "Golay"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00035"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0026",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Golay"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00035"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0027",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "Golay"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00033"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0028",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Golay"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00033"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0029",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "BB Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00040",
+      "B1-no_ablation_targeting.art.00045"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0030",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "BB Code n=72"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00040"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0031",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "BB Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00039",
+      "B1-no_ablation_targeting.art.00044"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0032",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "BB Code n=72"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00039"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0033",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "BB Code n=90"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00045"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0034",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "BB Code n=90"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00044"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0035",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "Iceberg Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00050",
+      "B1-no_ablation_targeting.art.00055",
+      "B1-no_ablation_targeting.art.00060"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0036",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Iceberg Code m=2"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00050"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0037",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "Iceberg Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00048",
+      "B1-no_ablation_targeting.art.00053",
+      "B1-no_ablation_targeting.art.00058"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0038",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Iceberg Code m=2"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00048"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0039",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Iceberg Code m=3"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00055"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0040",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Iceberg Code m=3"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00053"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0041",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Iceberg Code m=4"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00060"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0042",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Iceberg Code m=4"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00058"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0043",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "Hypercube Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00065",
+      "B1-no_ablation_targeting.art.00070"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0044",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Hypercube Code l=1"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00065"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0045",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "Hypercube Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00063",
+      "B1-no_ablation_targeting.art.00068"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0046",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Hypercube Code l=1"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00063"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0047",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Hypercube Code l=2"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00070"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0048",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Hypercube Code l=2"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00068"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0049",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "Hex Color Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00075",
+      "B1-no_ablation_targeting.art.00080",
+      "B1-no_ablation_targeting.art.00085"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0050",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Hex Color Code d=3"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00075"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0051",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "Hex Color Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00073",
+      "B1-no_ablation_targeting.art.00079",
+      "B1-no_ablation_targeting.art.00084"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0052",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Hex Color Code d=3"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00073"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0053",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Hex Color Code d=5"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00080"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0054",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Hex Color Code d=5"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00079"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0055",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Hex Color Code d=7"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00085"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0056",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Hex Color Code d=7"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00084"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0057",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "Square Octagon Color Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00090",
+      "B1-no_ablation_targeting.art.00095",
+      "B1-no_ablation_targeting.art.00100"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0058",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Square Octagon Color Code d=3"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00090"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0059",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "Square Octagon Color Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00088",
+      "B1-no_ablation_targeting.art.00093",
+      "B1-no_ablation_targeting.art.00099"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0060",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Square Octagon Color Code d=3"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00088"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0061",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Square Octagon Color Code d=5"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00095"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0062",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Square Octagon Color Code d=5"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00093"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0063",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Square Octagon Color Code d=7"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00100"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0064",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Square Octagon Color Code d=7"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00099"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0065",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "Rotated Surface Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00105",
+      "B1-no_ablation_targeting.art.00110",
+      "B1-no_ablation_targeting.art.00115"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0066",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Rotated Surface Code d=3"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00105"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0067",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "Rotated Surface Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00103",
+      "B1-no_ablation_targeting.art.00109",
+      "B1-no_ablation_targeting.art.00114"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0068",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Rotated Surface Code d=3"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00103"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0069",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Rotated Surface Code d=5"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00110"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0070",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Rotated Surface Code d=5"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00109"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0071",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Rotated Surface Code d=7"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00115"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0072",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "Rotated Surface Code d=7"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00114"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0073",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "4-Qubit Detector Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00120"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0074",
+    "statement": "action 'peephole' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "4-Qubit Detector Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00120"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0075",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "family": "4-Qubit Detector Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00118"
+    ],
+    "status": "invalidated"
+  },
+  {
+    "claim_id": "claim-0076",
+    "statement": "action 'targeted_rewrite' improves the B1 objective",
+    "scope": {
+      "task": "B1",
+      "base_code": "4-Qubit Detector Code"
+    },
+    "supporting": [],
+    "refuting": [
+      "B1-no_ablation_targeting.art.00118"
+    ],
+    "status": "invalidated"
+  }
+]
